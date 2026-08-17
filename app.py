@@ -59,9 +59,36 @@ def vacancy_to_view(row):
 #  PUBLIC PAGES
 # ---------------------------------------------------------------
 
+def _salary_value(salary_display):
+    """Best-effort numeric value pulled out of a free-text salary string
+    (e.g. '$65,000 MXN' -> 65000), used only to rank vacancies by pay."""
+    import re
+    if not salary_display:
+        return 0
+    digits = re.sub(r"[^\d]", "", salary_display)
+    return int(digits) if digits else 0
+
+
 @app.route("/")
 def inicio():
-    return render_template("inicio.html")
+    conn = db.get_db()
+    rows = conn.execute(
+        "SELECT * FROM vacancies WHERE status = 'active' ORDER BY published_at DESC"
+    ).fetchall()
+    post_rows = conn.execute(
+        "SELECT * FROM blog_posts WHERE status='published' ORDER BY published_at DESC LIMIT 3"
+    ).fetchall()
+    conn.close()
+    active_vacancies = [vacancy_to_view(r) for r in rows]
+    # "Vacantes destacadas": siempre las 3 vacantes activas mejor pagadas.
+    featured_vacancies = sorted(
+        active_vacancies, key=lambda v: _salary_value(v.get("salary_display")), reverse=True
+    )[:3]
+    # "Blog": siempre los 3 artículos publicados más recientes.
+    latest_posts = post_rows
+    return render_template(
+        "inicio.html", featured_vacancies=featured_vacancies, latest_posts=latest_posts
+    )
 
 
 @app.route("/soluciones")
