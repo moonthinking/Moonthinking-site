@@ -1,0 +1,93 @@
+{% extends "admin/_layout.html" %}
+{% block title %}{{ 'Editar vacante' if v else 'Nueva vacante' }} · Panel Moonthinking{% endblock %}
+{% block content %}
+<h1>{{ 'Editar vacante' if v else 'Nueva vacante' }}</h1>
+<p class="sub">{{ v.title if v else 'Completa los datos de la posición.' }}</p>
+
+<form method="post" class="admin-form">
+  <div class="f">
+    <label>Nombre del puesto</label>
+    <input type="text" name="title" required value="{{ v.title if v else '' }}">
+  </div>
+  <div class="row2">
+    <div class="f">
+      <label>Ubicación</label>
+      <input type="text" name="location" value="{{ v.location if v else 'San Luis Potosí' }}">
+    </div>
+    <div class="f">
+      <label>Modalidad</label>
+      <select name="modality">
+        {% for m in ['Presencial','Híbrida','Remota'] %}
+        <option value="{{ m }}" {{ 'selected' if v and v.modality==m }}>{{ m }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="row3">
+    <div class="f">
+      <label>Salario a mostrar</label>
+      <input type="text" name="salary_display" placeholder="Ej. $45,000 MXN" value="{{ v.salary_display if v else '' }}">
+      <div class="hint">Déjalo vacío para mostrar "A convenir".</div>
+    </div>
+    <div class="f">
+      <label>Estrella de rango salarial</label>
+      <select name="salary_tier">
+        <option value="" {{ 'selected' if v and not v.salary_tier }}>Sin estrella</option>
+        <option value="blue" {{ 'selected' if v and v.salary_tier=='blue' }}>Azul ($60,000–$99,000)</option>
+        <option value="gold" {{ 'selected' if v and v.salary_tier=='gold' }}>Dorada (+$100,000)</option>
+      </select>
+    </div>
+    <div class="f">
+      <label># de posiciones</label>
+      <input type="number" name="positions" min="1" value="{{ v.positions if v else 1 }}">
+    </div>
+  </div>
+  <div class="f check">
+    <input type="checkbox" name="is_confidential" id="conf" {{ 'checked' if v and v.is_confidential }}>
+    <label for="conf" style="margin:0">Vacante confidencial (oculta el nombre de la empresa)</label>
+  </div>
+  <div class="f">
+    <label>Nombre de la empresa a mostrar</label>
+    <input type="text" name="company_label" value="{{ v.company_label if v else 'Confidencial' }}">
+  </div>
+
+  <div class="f">
+    <label>Objetivo del puesto</label>
+    <textarea name="objetivo">{{ v.objetivo if v else '' }}</textarea>
+  </div>
+  <div class="f">
+    <label>Responsabilidades</label>
+    <textarea name="responsabilidades">{{ v.responsabilidades if v else '' }}</textarea>
+    <div class="hint">Una responsabilidad por línea.</div>
+  </div>
+  <div class="f">
+    <label>Requisitos y experiencia</label>
+    <textarea name="requisitos">{{ v.requisitos if v else '' }}</textarea>
+    <div class="hint">Un requisito por línea.</div>
+  </div>
+  <div class="f">
+    <label>Prestaciones</label>
+    <textarea name="prestaciones">{{ v.prestaciones if v else '' }}</textarea>
+  </div>
+
+  <div class="row2">
+    <div class="f">
+      <label>Estatus</label>
+      <select name="status">
+        <option value="active" {{ 'selected' if v and v.status=='active' }}>Activa (visible en el sitio)</option>
+        <option value="draft" {{ 'selected' if v and v.status=='draft' }}>Borrador (oculta)</option>
+        <option value="closed" {{ 'selected' if v and v.status=='closed' }}>Cerrada (oculta)</option>
+      </select>
+    </div>
+    <div class="f">
+      <label>Fecha de publicación</label>
+      <input type="date" name="published_at" value="{{ v.published_at if v else '' }}">
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn btn-primary">{{ 'Guardar cambios' if v else 'Crear vacante' }}</button>
+    <a href="{{ url_for('admin.vacancies_list') }}" class="btn btn-outline">Cancelar</a>
+  </div>
+</form>
+{% endblock %}

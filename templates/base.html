@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Moonthinking · Talent Human Resources{% endblock %}</title>
+<meta name="description" content="{% block description %}Búsqueda y selección especializada de profesionales y ejecutivos en México.{% endblock %}">
+<link rel="icon" href="{{ url_for('static', filename='img/moon_icon.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-wrap">
+    {% for category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<a href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_text }}" target="_blank" rel="noopener" class="wa-float" title="Escríbenos por WhatsApp">
+  <span class="icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3C9.37 3 3.96 8.4 3.96 15.06c0 2.2.59 4.26 1.62 6.04L3 29l8.1-2.5a12.9 12.9 0 0 0 4.94.98h.01c6.67 0 12.08-5.4 12.08-12.06C28.13 8.4 22.72 3 16.05 3zm0 22.06h-.01a10 10 0 0 1-5.1-1.4l-.37-.22-3.79 1.17 1.2-3.71-.24-.38a9.98 9.98 0 0 1-1.53-5.35c0-5.5 4.48-9.98 10-9.98 2.67 0 5.18 1.04 7.07 2.93a9.9 9.9 0 0 1 2.92 7.05c0 5.5-4.48 9.9-9.96 9.9zm5.47-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.37-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+  </span>
+</a>
+
+<style>
+.flash-wrap{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;gap:8px}
+.flash{background:#0CABDA;color:#00102A;font-weight:700;font-size:14px;padding:12px 20px;border-radius:9px;box-shadow:0 8px 24px rgba(0,16,42,.25)}
+.flash-error{background:#e05252;color:#fff}
+</style>
+<script>
+(function(){
+  var h = document.querySelector('header.site');
+  if(!h) return;
+  function onScroll(){
+    if(window.scrollY > 40){ h.classList.add('scrolled'); }
+    else { h.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+})();
+</script>
+</body>
+</html>

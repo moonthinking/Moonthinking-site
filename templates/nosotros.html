@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Nosotros · Moonthinking{% endblock %}
+{% block content %}
+
+  {% include "partials/header.html" %}
+  <section class="subhero">
+    <div class="plexus"><img src="{{ url_for('static', filename='img/plexus_hero.svg') }}" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Sobre Nosotros</div>
+      <h1>Un equipo cercano, rápido, y enfocado en un solo objetivo.</h1>
+      <p class="sub">Ayudamos a empresas en México a encontrar al talento correcto &mdash; y a construir relaciones de confianza que crecen con el tiempo.</p>
+    </div>
+  </section>
+
+  <section class="section" style="overflow:hidden">
+    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
+    <div class="wrap" style="max-width:760px">
+      <div class="eyebrow-sm"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Nuestra trayectoria</div>
+      <h2>+8 años construyendo relaciones de confianza.</h2>
+      <p class="lead">Hemos acompañado a empresas de distintas industrias en México en sus procesos de búsqueda y selección, desarrollando durante ese tiempo una sólida red de talento y un profundo conocimiento del mercado laboral. Hoy atendemos cada proceso de forma directa, rápida y cercana, sin intermediarios ni procesos automatizados que pierdan de vista lo que cada empresa realmente necesita.</p>
+      <p class="lead">Grandes empresas se construyen con grandes personas &mdash; y encontrar a esas personas es exactamente en lo que nos especializamos.</p>
+    </div>
+  </section>
+
+  <section class="section off" style="overflow:hidden">
+    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow-sm" style="text-align:center">Misión y visión</div>
+      <div class="mv-grid" style="margin-top:28px">
+        <div class="card mv-card">
+          <div class="icon-wrap g2"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span></div>
+          <h3>Misión</h3>
+          <p>Ayudar a empresas mexicanas a encontrar a la persona correcta para cada posición: alguien de confianza, bien evaluado, con referencias verificadas y que encaje de verdad con su equipo y su cultura. Trabajamos de la mano con cada cliente para que siga creciendo, en el mejor ambiente laboral posible.</p>
+        </div>
+        <div class="card mv-card">
+          <div class="icon-wrap g1"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.5 3.5v4h-4M5.5 20.5v-4h4"/></svg></span></div>
+          <h3>Visión</h3>
+          <p>Ser el socio de confianza en reclutamiento para cada vez más empresas en México, construyendo relaciones de largo plazo donde crecemos junto con nuestros clientes: ellas con equipos sólidos, y nosotros con la certeza de haber puesto a la persona correcta en el lugar correcto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="overflow:hidden">
+    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow-sm" style="text-align:center">Nuestros valores</div>
+      <h2 style="text-align:center">Cómo trabajamos, todos los días</h2>
+      <div class="mini-sol" style="margin-top:36px">
+        <div class="mini-card">
+          <div class="icon-wrap g1"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span></div>
+          <h4>Confianza</h4>
+          <p>Trabajamos con la confidencialidad y la seriedad que cada proceso de contratación requiere, tanto para la empresa como para el candidato.</p>
+        </div>
+        <div class="mini-card">
+          <div class="icon-wrap g2"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span></div>
+          <h4>Evaluación real</h4>
+          <p>No solo revisamos un currículum: entrevistamos y revisamos referencias, para llegar a ti con candidatos realmente evaluados.</p>
+        </div>
+        <div class="mini-card">
+          <div class="icon-wrap g3"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.5 3.5v4h-4M5.5 20.5v-4h4"/></svg></span></div>
+          <h4>Cercanía</h4>
+          <p>Acompañamos cada búsqueda de cerca, sin perder de vista lo que cada empresa y cada puesto realmente necesitan.</p>
+        </div>
+        <div class="mini-card">
+          <div class="icon-wrap g4"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 8l4 3 5-6 5 6 4-3-1.6 9.5H4.6L3 8z"/><path d="M4.6 17.5h14.8"/></svg></span></div>
+          <h4>Crecimiento compartido</h4>
+          <p>Medimos nuestro trabajo por el crecimiento de las empresas con las que trabajamos, no solo por vacantes cerradas.</p>
+        </div></div>
+    </div>
+  </section>
+
+  <section class="cta-split">
+    <div class="half a" style="grid-column:1 / -1;text-align:center;padding:64px 32px">
+      <h3>¿Quieres trabajar con nosotros?</h3>
+      <p style="margin:0 auto 24px">Cuéntanos qué necesitas y empecemos la búsqueda.</p>
+      <a href="{{ url_for('empresas') }}" class="btn btn-primary">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </section>
+
+  {% include "partials/footer.html" %}
+{% endblock %}

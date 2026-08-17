@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ p.title }} · Blog · Moonthinking{% endblock %}
+{% block content %}
+
+  {% include "partials/header.html" %}
+  <div style="height:78px;background:var(--navy-deep)"></div>
+  <section class="section off" style="overflow:hidden;padding-top:150px">
+    <div class="wrap">
+      <a href="{{ url_for('blog') }}" class="link-ghost" style="display:inline-block;margin-bottom:18px">&larr; Volver al blog</a>
+
+      <div class="detail-wrap" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:44px;grid-template-columns:1fr">
+        <div class="detail-main" style="max-width:720px">
+          <span class="tag" style="display:inline-block;background:var(--off);color:var(--navy);font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:14px">{{ p.category }}</span>
+          <h1>{{ p.title }}</h1>
+          <div class="detail-meta">
+            <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>{{ p.reading_time }}</span>
+          </div>
+
+          {% for para in p.body.split('\n\n') if para.strip() %}
+          <div class="detail-block">
+            <p>{{ para.strip() }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-split">
+    <div class="half a" style="grid-column:1 / -1;text-align:center;padding:64px 32px">
+      <h3>¿Necesitas cubrir una posición clave?</h3>
+      <p style="margin:0 auto 24px">Cuéntanos qué necesitas y empecemos la búsqueda.</p>
+      <a href="{{ url_for('empresas') }}" class="btn btn-primary">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </section>
+
+  {% include "partials/footer.html" %}
+{% endblock %}
