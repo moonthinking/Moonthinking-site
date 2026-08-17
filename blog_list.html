@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Blog · Moonthinking{% endblock %}
+{% block content %}
+
+  {% include "partials/header.html" %}
+  <section class="subhero">
+    <div class="plexus"><img src="{{ url_for('static', filename='img/plexus_hero.svg') }}" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Blog</div>
+      <h1>Artículos sobre reclutamiento, contratación y talento.</h1>
+      <p class="sub">Contenido para empresas que contratan y para profesionales que buscan su siguiente oportunidad.</p>
+    </div>
+  </section>
+
+  <section class="section tight" style="overflow:hidden">
+    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
+    <div class="wrap">
+      <p class="results-count">{{ posts|length }} artículo{{ 's' if posts|length != 1 }}</p>
+      <div class="grid-3">
+        {% for p in posts %}
+        <a href="{{ url_for('blog_detail', slug=p.slug) }}" class="card blog-card">
+          <div class="thumb"><span class="cat">{{ p.category }}</span></div>
+          <div class="body">
+            <h3>{{ p.title }}</h3>
+            <div class="meta"><span>{{ p.reading_time }}</span></div>
+          </div>
+        </a>
+        {% else %}
+        <p style="color:var(--muted)">Todavía no hay artículos publicados.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-split">
+    <div class="half a" style="grid-column:1 / -1;text-align:center;padding:64px 32px">
+      <h3>¿Necesitas cubrir una posición clave?</h3>
+      <p style="margin:0 auto 24px">Cuéntanos qué necesitas y empecemos la búsqueda.</p>
+      <a href="{{ url_for('empresas') }}" class="btn btn-primary">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </section>
+
+  {% include "partials/footer.html" %}
+{% endblock %}

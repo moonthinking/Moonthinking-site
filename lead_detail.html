@@ -1,0 +1,48 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Solicitud · {{ lead.company_name }} · Panel Moonthinking{% endblock %}
+{% block content %}
+<a href="{{ url_for('admin.leads_list') }}" class="btn btn-outline btn-sm" style="margin-bottom:18px">&larr; Volver</a>
+<h1>{{ lead.company_name or '(sin nombre)' }}</h1>
+<p class="sub">Recibida el {{ lead.created_at[:10] }}</p>
+
+<div class="admin-form" style="max-width:900px">
+  <h3 style="margin-top:0">Contacto</h3>
+  <p><strong>{{ lead.contact_name }}</strong><br>{{ lead.contact_email }} &middot; {{ lead.contact_phone }}</p>
+
+  <h3>Puesto</h3>
+  <p><strong>{{ lead.position_title or '—' }}</strong></p>
+  <p>{{ lead.position_objective }}</p>
+  <p>{{ lead.position_activities }}</p>
+
+  <div class="row3">
+    <p><strong>Días:</strong> {{ lead.work_days or '—' }}</p>
+    <p><strong>Horario:</strong> {{ lead.work_hours or '—' }}</p>
+    <p><strong>Modalidad:</strong> {{ lead.modality or '—' }}</p>
+  </div>
+  <p><strong>Lugar:</strong> {{ lead.work_location or '—' }}</p>
+  <p><strong>Gente a cargo:</strong> {{ lead.has_reports or '—' }} &middot; <strong>Reporta a:</strong> {{ lead.reports_to or '—' }}</p>
+  <p><strong>Departamento:</strong> {{ lead.department_makeup or '—' }}</p>
+
+  <h3>Perfil</h3>
+  <p><strong>Escolaridad:</strong> {{ lead.min_education or '—' }} &middot; <strong>Experiencia:</strong> {{ lead.required_experience or '—' }}</p>
+  <p><strong>Conocimientos:</strong> {{ lead.required_knowledge or '—' }}</p>
+  <p><strong>Habilidades:</strong> {{ lead.required_skills or '—' }}</p>
+  <p><strong>Herramientas:</strong> {{ lead.tools_equipment or '—' }} &middot; <strong>Idiomas:</strong> {{ lead.languages or '—' }}</p>
+
+  <h3>Sueldo y prestaciones</h3>
+  <p><strong>Sueldo:</strong> {{ lead.salary or '—' }} &middot; <strong>Periodo:</strong> {{ lead.pay_period or '—' }}</p>
+  <p><strong>Prestaciones:</strong> {{ lead.benefits or '—' }}</p>
+  <p><strong>Otro concepto:</strong> {{ lead.other_pay or '—' }} &middot; <strong>Vehículo:</strong> {{ lead.needs_vehicle or '—' }}</p>
+  <p><strong>Forma de pago:</strong> {{ lead.payment_method or '—' }}</p>
+
+  <h3>Información adicional</h3>
+  <p>{{ lead.candidate_personality or '—' }}</p>
+  <p><strong>Tipo:</strong> {{ lead.vacancy_type or '—' }} &middot; <strong>Manual de procedimientos:</strong> {{ lead.has_procedures_manual or '—' }}</p>
+  <p>{{ lead.additional_comments or '—' }}</p>
+
+  {% if lead.attachment_filename %}
+  <h3>Adjunto</h3>
+  <p><a href="{{ url_for('admin.uploaded_file', filename=lead.attachment_filename) }}" class="btn btn-outline btn-sm">Descargar archivo</a></p>
+  {% endif %}
+</div>
+{% endblock %}

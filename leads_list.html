@@ -1,0 +1,23 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Solicitudes de empresas · Panel Moonthinking{% endblock %}
+{% block content %}
+<h1>Solicitudes de empresas</h1>
+<p class="sub">Formularios enviados desde "Quiero contratar".</p>
+
+{% if leads %}
+<table class="admin-table">
+  <tr><th>Empresa</th><th>Contacto</th><th>Puesto solicitado</th><th>Fecha</th><th></th></tr>
+  {% for l in leads %}
+  <tr>
+    <td>{{ l.company_name or '(sin nombre)' }}</td>
+    <td>{{ l.contact_name }}<br><span style="color:var(--muted);font-size:12.5px">{{ l.contact_email }} &middot; {{ l.contact_phone }}</span></td>
+    <td>{{ l.position_title or '—' }}</td>
+    <td>{{ l.created_at[:10] }}</td>
+    <td><a href="{{ url_for('admin.lead_detail', lid=l.id) }}" class="btn btn-outline btn-sm">Ver detalle</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<div class="empty-state">Todavía no hay solicitudes.</div>
+{% endif %}
+{% endblock %}

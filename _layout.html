@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Panel · Moonthinking{% endblock %}</title>
+<link rel="icon" href="{{ url_for('static', filename='img/moon_icon.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-side">
+    <div class="brand">Moonthinking · Panel</div>
+    <nav>
+      <a href="{{ url_for('admin.dashboard') }}" class="{{ 'active' if request.endpoint=='admin.dashboard' }}">Resumen</a>
+      <a href="{{ url_for('admin.vacancies_list') }}" class="{{ 'active' if request.endpoint and request.endpoint.startswith('admin.vacanc') }}">Vacantes</a>
+      <a href="{{ url_for('admin.posts_list') }}" class="{{ 'active' if request.endpoint and request.endpoint.startswith('admin.post') }}">Blog</a>
+      <a href="{{ url_for('admin.leads_list') }}" class="{{ 'active' if request.endpoint and request.endpoint.startswith('admin.lead') }}">Solicitudes de empresas</a>
+      <a href="{{ url_for('admin.applications_list') }}" class="{{ 'active' if request.endpoint=='admin.applications_list' }}">Postulaciones</a>
+      <a href="{{ url_for('admin.api_docs') }}" class="{{ 'active' if request.endpoint=='admin.api_docs' }}">API para bots</a>
+      <a href="{{ url_for('inicio') }}" target="_blank">Ver sitio ↗</a>
+    </nav>
+    <div class="logout"><a href="{{ url_for('admin.logout') }}">Cerrar sesión</a></div>
+  </aside>
+  <main class="admin-main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</div>
+</body>
+</html>

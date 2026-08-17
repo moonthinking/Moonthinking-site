@@ -1,0 +1,32 @@
+{% extends "admin/_layout.html" %}
+{% block title %}API para bots · Panel Moonthinking{% endblock %}
+{% block content %}
+<h1>API para bots</h1>
+<p class="sub">Para que un bot o automatización pueda crear, editar o borrar vacantes y artículos del blog directamente.</p>
+
+<div class="api-note">
+  Todas las peticiones deben incluir el encabezado <code>X-API-Key: {{ api_key }}</code>.<br>
+  Este valor viene de la variable de entorno <code>BOT_API_KEY</code> del servidor &mdash; cámbialo antes de usarlo en producción.
+</div>
+
+<div class="admin-form" style="max-width:900px">
+  <h3 style="margin-top:0">Vacantes</h3>
+  <p><code>GET /api/bot/vacancies</code> — lista todas las vacantes.</p>
+  <p><code>GET /api/bot/vacancies/&lt;id&gt;</code> — detalle de una vacante.</p>
+  <p><code>POST /api/bot/vacancies</code> — crea una vacante. Body JSON, campo obligatorio: <code>title</code>. Opcionales: <code>location</code>, <code>modality</code>, <code>salary_display</code>, <code>salary_tier</code> (<code>blue</code>/<code>gold</code>), <code>positions</code>, <code>is_confidential</code>, <code>company_label</code>, <code>objetivo</code>, <code>responsabilidades</code>, <code>requisitos</code>, <code>prestaciones</code>, <code>status</code> (<code>active</code>/<code>draft</code>/<code>closed</code>), <code>published_at</code> (YYYY-MM-DD).</p>
+  <p><code>PUT /api/bot/vacancies/&lt;id&gt;</code> — actualiza cualquiera de los campos anteriores.</p>
+  <p><code>DELETE /api/bot/vacancies/&lt;id&gt;</code> — elimina la vacante.</p>
+
+  <h3>Blog</h3>
+  <p><code>GET /api/bot/posts</code> — lista todos los artículos.</p>
+  <p><code>GET /api/bot/posts/&lt;id&gt;</code> — detalle de un artículo.</p>
+  <p><code>POST /api/bot/posts</code> — crea un artículo. Body JSON, campos obligatorios: <code>title</code>, <code>body</code>. Opcionales: <code>category</code>, <code>reading_time</code>, <code>status</code> (<code>published</code>/<code>draft</code>), <code>published_at</code>.</p>
+  <p><code>PUT /api/bot/posts/&lt;id&gt;</code> — actualiza cualquiera de los campos anteriores.</p>
+  <p><code>DELETE /api/bot/posts/&lt;id&gt;</code> — elimina el artículo.</p>
+
+  <h3>Ejemplo</h3>
+  <p><code>curl -X POST https://tu-dominio.com/api/bot/vacancies \<br>
+  &nbsp;&nbsp;-H "X-API-Key: {{ api_key }}" -H "Content-Type: application/json" \<br>
+  &nbsp;&nbsp;-d '{"title":"Analista de Nómina","salary_display":"$28,000 MXN"}'</code></p>
+</div>
+{% endblock %}

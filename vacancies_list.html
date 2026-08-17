@@ -1,0 +1,35 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Vacantes · Panel Moonthinking{% endblock %}
+{% block content %}
+<div class="toolbar">
+  <div>
+    <h1 style="margin-bottom:2px">Vacantes</h1>
+    <p class="sub" style="margin:0">Alta, edición y baja de vacantes publicadas en el sitio.</p>
+  </div>
+  <a href="{{ url_for('admin.vacancy_new') }}" class="btn btn-primary">+ Nueva vacante</a>
+</div>
+
+{% if vacancies %}
+<table class="admin-table">
+  <tr><th>Puesto</th><th>Ubicación</th><th>Salario</th><th>Estatus</th><th>Publicada</th><th></th></tr>
+  {% for v in vacancies %}
+  <tr>
+    <td><a href="{{ url_for('admin.vacancy_edit', vid=v.id) }}">{{ v.title }}</a></td>
+    <td>{{ v.location }} &middot; {{ v.modality }}</td>
+    <td>{{ v.salary_display or 'A convenir' }}</td>
+    <td><span class="badge badge-{{ v.status }}">{{ v.status }}</span></td>
+    <td>{{ v.published_at }}</td>
+    <td style="white-space:nowrap">
+      <a href="{{ url_for('vacante_detail', slug=v.slug) }}" target="_blank" class="btn btn-outline btn-sm">Ver</a>
+      <a href="{{ url_for('admin.vacancy_edit', vid=v.id) }}" class="btn btn-outline btn-sm">Editar</a>
+      <form method="post" action="{{ url_for('admin.vacancy_delete', vid=v.id) }}" style="display:inline" onsubmit="return confirm('¿Eliminar esta vacante?');">
+        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<div class="empty-state">Todavía no hay vacantes. Crea la primera con el botón de arriba.</div>
+{% endif %}
+{% endblock %}

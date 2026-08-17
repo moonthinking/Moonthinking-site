@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Vacantes activas · Moonthinking{% endblock %}
+{% block content %}
+
+  {% include "partials/header.html" %}
+  <section class="subhero" style="padding:150px 0 56px">
+    <div class="plexus"><img src="{{ url_for('static', filename='img/plexus_hero.svg') }}" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Vacantes</div>
+      <h1>Oportunidades activas</h1>
+      <p class="sub">Posiciones abiertas.</p>
+    </div>
+  </section>
+
+  <section class="section tight" style="overflow:hidden">
+    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
+    <div class="wrap">
+      <form class="filter-bar" method="get">
+        <div class="search"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><input type="text" name="q" value="{{ q or '' }}" placeholder="Buscar por puesto o palabra clave"></div>
+        <select name="location" onchange="this.form.submit()">
+          <option value="" {{ 'selected' if not location }}>Ubicación: todas</option>
+          {% for loc in locations %}<option value="{{ loc }}" {{ 'selected' if location==loc }}>{{ loc }}</option>{% endfor %}
+        </select>
+        <select name="modality" onchange="this.form.submit()">
+          <option value="" {{ 'selected' if not modality }}>Modalidad: todas</option>
+          <option value="Presencial" {{ 'selected' if modality=='Presencial' }}>Presencial</option>
+          <option value="Híbrida" {{ 'selected' if modality=='Híbrida' }}>Híbrida</option>
+          <option value="Remota" {{ 'selected' if modality=='Remota' }}>Remota</option>
+        </select>
+        <select name="sort" onchange="this.form.submit()">
+          <option value="recent" {{ 'selected' if sort=='recent' or not sort }}>Ordenar: más recientes</option>
+          <option value="salary" {{ 'selected' if sort=='salary' }}>Salario</option>
+        </select>
+        <noscript><button type="submit" class="btn btn-outline-navy btn-sm">Filtrar</button></noscript>
+      </form>
+      <p class="results-count">{{ vacancies|length }} vacante{{ 's' if vacancies|length != 1 }} activa{{ 's' if vacancies|length != 1 }}</p>
+      <div class="vac-grid">
+        {% for v in vacancies %}
+        <div class="card vac-card">
+          <div class="top-row"><span></span>{% if v.is_confidential %}<span class="tag-conf">Confidencial</span>{% endif %}</div>
+          <h3><a href="{{ url_for('vacante_detail', slug=v.slug) }}" style="color:inherit;text-decoration:none">{{ v.title }}</a></h3>
+          <div class="meta">
+            <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span>{{ v.location }}</span>
+            <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="1.5"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5"/><path d="M3 12.5h18"/></svg></span>{{ v.modality }}</span>
+          </div>
+          <div class="foot">
+            <div class="salary" style="display:flex;align-items:center;gap:6px">
+              {% if v.salary_tier == 'gold' %}<span class="icon" style="width:15px;height:15px" title="Arriba de $100,000 MXN"><svg viewBox="0 0 24 24" fill="#D9A400"><path d="M12 2.5l2.9 6.1 6.6.7-4.9 4.5 1.3 6.6L12 17.1 6.1 20.4l1.3-6.6-4.9-4.5 6.6-.7z"/></svg></span>{% elif v.salary_tier == 'blue' %}<span class="icon" style="width:15px;height:15px" title="Entre $60,000 y $99,000 MXN"><svg viewBox="0 0 24 24" fill="#0CABDA"><path d="M12 2.5l2.9 6.1 6.6.7-4.9 4.5 1.3 6.6L12 17.1 6.1 20.4l1.3-6.6-4.9-4.5 6.6-.7z"/></svg></span>{% endif %}
+              {{ v.salary_display or 'A convenir' }}
+            </div>
+            <span class="date">{{ v.published_label }}</span>
+          </div>
+          <div class="apply-row">
+            <a href="{{ url_for('vacante_detail', slug=v.slug) }}" class="btn btn-outline-navy btn-sm btn-block">Ver vacante <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+        </div>
+        {% else %}
+        <p style="color:var(--muted)">No hay vacantes que coincidan con tu búsqueda por el momento.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-split">
+    <div class="half a" style="grid-column:1 / -1;text-align:center;padding:64px 32px">
+      <h3>¿No encontraste la vacante adecuada?</h3>
+      <p style="margin:0 auto 24px">Comparte tu CV y entra a nuestra base de talento para futuras oportunidades.</p>
+      <a href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_text }}" target="_blank" rel="noopener" class="btn btn-primary">Comparte tu CV <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </section>
+
+  {% include "partials/footer.html" %}
+{% endblock %}

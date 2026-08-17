@@ -1,0 +1,44 @@
+{% extends "admin/_layout.html" %}
+{% block title %}{{ 'Editar artículo' if p else 'Nuevo artículo' }} · Panel Moonthinking{% endblock %}
+{% block content %}
+<h1>{{ 'Editar artículo' if p else 'Nuevo artículo' }}</h1>
+<p class="sub">{{ p.title if p else 'Escribe el contenido del artículo.' }}</p>
+
+<form method="post" class="admin-form">
+  <div class="f">
+    <label>Título</label>
+    <input type="text" name="title" required value="{{ p.title if p else '' }}">
+  </div>
+  <div class="row3">
+    <div class="f">
+      <label>Categoría</label>
+      <input type="text" name="category" value="{{ p.category if p else '' }}" placeholder="Ej. Contratación">
+    </div>
+    <div class="f">
+      <label>Tiempo de lectura</label>
+      <input type="text" name="reading_time" value="{{ p.reading_time if p else '5 min de lectura' }}">
+    </div>
+    <div class="f">
+      <label>Fecha de publicación</label>
+      <input type="date" name="published_at" value="{{ p.published_at if p else '' }}">
+    </div>
+  </div>
+  <div class="f">
+    <label>Contenido</label>
+    <textarea name="body" style="min-height:320px">{{ p.body if p else '' }}</textarea>
+    <div class="hint">Separa los párrafos con una línea en blanco entre ellos.</div>
+  </div>
+  <div class="f">
+    <label>Estatus</label>
+    <select name="status">
+      <option value="published" {{ 'selected' if p and p.status=='published' }}>Publicado (visible en el sitio)</option>
+      <option value="draft" {{ 'selected' if p and p.status=='draft' }}>Borrador (oculto)</option>
+    </select>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn btn-primary">{{ 'Guardar cambios' if p else 'Crear artículo' }}</button>
+    <a href="{{ url_for('admin.posts_list') }}" class="btn btn-outline">Cancelar</a>
+  </div>
+</form>
+{% endblock %}
