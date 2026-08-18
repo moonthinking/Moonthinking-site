@@ -61,32 +61,6 @@
     </div>
   </section>
 
-  <section class="section" style="overflow:hidden">
-    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
-    <div class="wrap">
-      <div class="head-row">
-        <div>
-          <div class="eyebrow-sm">Blog</div>
-          <h2>Artículos</h2>
-        </div>
-        <a href="{{ url_for('blog') }}" class="btn btn-outline-navy btn-sm">Ver el blog <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      </div>
-      <div class="grid-3">
-        {% for p in latest_posts %}
-        <a href="{{ url_for('blog_detail', slug=p.slug) }}" class="card blog-card">
-          <div class="thumb"><span class="cat">{{ p.category }}</span></div>
-          <div class="body">
-            <h3>{{ p.title }}</h3>
-            <div class="meta"><span>{{ p.reading_time }}</span></div>
-          </div>
-        </a>
-        {% else %}
-        <p style="color:var(--muted)">Todavía no hay artículos publicados. Da de alta el primero desde el panel.</p>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
   <section class="cta-split">
     <div class="half a">
       <h3>¿Necesitas cubrir una posición clave?</h3>
