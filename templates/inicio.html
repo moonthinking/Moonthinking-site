@@ -70,7 +70,7 @@
       <div class="grid-3">
         {% for p in latest_posts %}
         <a href="{{ url_for('blog_detail', slug=p.slug) }}" class="card blog-card">
-          <div class="thumb"><span class="cat">{{ p.category }}</span></div>
+          <div class="thumb"><img src="{{ url_for('static', filename=p.image) }}" alt="{{ p.title }}" loading="lazy"><span class="cat">{{ p.category }}</span></div>
           <div class="body">
             <h3>{{ p.title }}</h3>
             <div class="meta"><span>{{ p.reading_time }}</span></div>
