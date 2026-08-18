@@ -479,7 +479,7 @@ table.admin-table td{padding:14px 18px;border-top:1px solid var(--border);color:
     background:var(--navy-deep);
   }
   header.site.nav-open nav{display:flex}
-  header.site.on-dark.nav-open{background:var(--navy-deep);margin-bottom:0}
+  header.site.on-dark{background:var(--navy-deep);margin-bottom:0}
   header.site nav a{padding:13px 2px;opacity:1;border-bottom:1px solid rgba(255,255,255,.08)}
   header.site nav a:last-child{border-bottom:none}
   header.site nav .nav-only-mobile{display:block;font-weight:700}
