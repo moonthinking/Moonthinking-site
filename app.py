@@ -10,6 +10,7 @@ from werkzeug.utils import secure_filename
 
 import db
 import notifications
+import vacantes_data
 from config import UPLOAD_DIR, WHATSAPP_NUMBER, WHATSAPP_TEXT
 
 app = Flask(__name__)
@@ -49,8 +50,10 @@ def human_date(iso_date):
     return f"Hace {months} mes{'es' if months != 1 else ''}"
 
 
-def vacancy_to_view(row):
-    d = dict(row)
+def vacancy_to_view(v):
+    """Vacancy dict (from vacantes_data.py, hardcoded and immutable) ->
+    template-ready dict with a human-friendly published date label."""
+    d = dict(v)
     d["published_label"] = human_date(d.get("published_at"))
     return d
 
@@ -76,24 +79,12 @@ def _salary_value(salary_display):
 
 @app.route("/")
 def inicio():
-    conn = db.get_db()
-    rows = conn.execute(
-        "SELECT * FROM vacancies WHERE status = 'active' ORDER BY published_at DESC"
-    ).fetchall()
-    post_rows = conn.execute(
-        "SELECT * FROM blog_posts WHERE status='published' ORDER BY published_at DESC LIMIT 3"
-    ).fetchall()
-    conn.close()
-    active_vacancies = [vacancy_to_view(r) for r in rows]
+    active_vacancies = [vacancy_to_view(v) for v in vacantes_data.get_all() if v.get("status") == "active"]
     # "Vacantes destacadas": siempre las 3 vacantes activas mejor pagadas.
     featured_vacancies = sorted(
         active_vacancies, key=lambda v: _salary_value(v.get("salary_display")), reverse=True
     )[:3]
-    # "Blog": siempre los 3 artículos publicados más recientes.
-    latest_posts = post_rows
-    return render_template(
-        "inicio.html", featured_vacancies=featured_vacancies, latest_posts=latest_posts
-    )
+    return render_template("inicio.html", featured_vacancies=featured_vacancies)
 
 
 @app.route("/soluciones")
@@ -147,39 +138,35 @@ def nosotros():
 
 # ---------------------------------------------------------------
 #  VACANTES
+#
+#  Fijas en el código (vacantes_data.py), no vienen de la base de datos:
+#  así no se pierden si Render reinicia el filesystem del plan gratuito,
+#  y no se pueden modificar por accidente desde el panel de admin.
 # ---------------------------------------------------------------
 
 @app.route("/vacantes")
 def vacantes():
-    conn = db.get_db()
-    q = request.args.get("q", "").strip()
+    q = request.args.get("q", "").strip().lower()
     location = request.args.get("location", "").strip()
     modality = request.args.get("modality", "").strip()
     sort = request.args.get("sort", "recent")
 
-    query = "SELECT * FROM vacancies WHERE status = 'active'"
-    params = []
+    items = [v for v in vacantes_data.get_all() if v.get("status") == "active"]
     if q:
-        query += " AND title LIKE ?"
-        params.append(f"%{q}%")
+        items = [v for v in items if q in v["title"].lower()]
     if location:
-        query += " AND location = ?"
-        params.append(location)
+        items = [v for v in items if v["location"] == location]
     if modality:
-        query += " AND modality = ?"
-        params.append(modality)
+        items = [v for v in items if v["modality"] == modality]
+
     if sort == "salary":
-        query += " ORDER BY salary_display DESC"
+        items = sorted(items, key=lambda v: _salary_value(v.get("salary_display")), reverse=True)
     else:
-        query += " ORDER BY published_at DESC"
+        items = sorted(items, key=lambda v: v.get("published_at", ""), reverse=True)
 
-    rows = conn.execute(query, params).fetchall()
-    locations = [r["location"] for r in conn.execute(
-        "SELECT DISTINCT location FROM vacancies WHERE status='active' ORDER BY location"
-    ).fetchall()]
-    conn.close()
+    locations = sorted({v["location"] for v in vacantes_data.get_all() if v.get("status") == "active"})
 
-    vacancies_list = [vacancy_to_view(r) for r in rows]
+    vacancies_list = [vacancy_to_view(v) for v in items]
     return render_template(
         "vacantes_list.html", vacancies=vacancies_list,
         q=q, location=location, modality=modality, sort=sort, locations=locations,
@@ -188,22 +175,18 @@ def vacantes():
 
 @app.route("/vacantes/<slug>")
 def vacante_detail(slug):
-    conn = db.get_db()
-    row = conn.execute("SELECT * FROM vacancies WHERE slug = ?", (slug,)).fetchone()
-    conn.close()
-    if not row:
+    v = vacantes_data.get_by_slug(slug)
+    if not v:
         abort(404)
-    return render_template("vacante_detail.html", v=vacancy_to_view(row))
+    return render_template("vacante_detail.html", v=vacancy_to_view(v))
 
 
 @app.route("/vacantes/<slug>/postularme", methods=["GET", "POST"])
 def vacante_apply(slug):
-    conn = db.get_db()
-    row = conn.execute("SELECT * FROM vacancies WHERE slug = ?", (slug,)).fetchone()
-    if not row:
-        conn.close()
+    v_raw = vacantes_data.get_by_slug(slug)
+    if not v_raw:
         abort(404)
-    v = vacancy_to_view(row)
+    v = vacancy_to_view(v_raw)
 
     if request.method == "POST":
         resume_filename = None
@@ -217,16 +200,19 @@ def vacante_apply(slug):
         phone = request.form.get("phone", "").strip()
         message = request.form.get("message", "").strip()
 
+        conn = db.get_db()
+        # vacancy_id queda en NULL: estas vacantes ya no viven en la tabla
+        # `vacancies`, así que solo guardamos su título de referencia.
         conn.execute(
             "INSERT INTO applications (vacancy_id, vacancy_title, full_name, email, phone, message, resume_filename, created_at) "
             "VALUES (?,?,?,?,?,?,?,?)",
-            (row["id"], row["title"], full_name, email, phone, message, resume_filename, db.now()),
+            (None, v_raw["title"], full_name, email, phone, message, resume_filename, db.now()),
         )
         conn.commit()
         conn.close()
 
         notifications.send_application_email({
-            "vacancy_title": row["title"],
+            "vacancy_title": v_raw["title"],
             "full_name": full_name,
             "email": email,
             "phone": phone,
@@ -236,32 +222,7 @@ def vacante_apply(slug):
 
         return render_template("vacante_apply.html", v=v, sent=True)
 
-    conn.close()
     return render_template("vacante_apply.html", v=v, sent=False)
-
-
-# ---------------------------------------------------------------
-#  BLOG
-# ---------------------------------------------------------------
-
-@app.route("/blog")
-def blog():
-    conn = db.get_db()
-    rows = conn.execute(
-        "SELECT * FROM blog_posts WHERE status='published' ORDER BY published_at DESC"
-    ).fetchall()
-    conn.close()
-    return render_template("blog_list.html", posts=rows)
-
-
-@app.route("/blog/<slug>")
-def blog_detail(slug):
-    conn = db.get_db()
-    row = conn.execute("SELECT * FROM blog_posts WHERE slug = ?", (slug,)).fetchone()
-    conn.close()
-    if not row:
-        abort(404)
-    return render_template("blog_detail.html", p=row)
 
 
 # Register the admin panel + bot API blueprints
@@ -280,3 +241,4 @@ def not_found(e):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=os.environ.get("FLASK_DEBUG", "0") == "1")
+
