@@ -2,21 +2,56 @@
 """
 Vacantes fijas del sitio publico.
 
-Estas 10 vacantes estan escritas directamente en el codigo (no viven en la
-base de datos) para que NUNCA se pierdan si Render reinicia o borra el
-sistema de archivos local del plan gratuito, y para que no se puedan editar
-por accidente desde el panel de admin. Fueron seleccionadas del historial
-completo de CompuTrabajo de Santiago (activas, archivadas y vencidas),
-cuidando variedad geografica (San Luis Potosi, Queretaro, Ciudad de Mexico,
-Leon) y de tipo de puesto, con 3 posiciones arriba de $100,000 MXN, 4 entre
-$60,000-$99,000 MXN y 3 entre $30,000-$60,000 MXN mensuales.
+Estas son las vacantes que estan REALMENTE ACTIVAS en la cuenta de
+CompuTrabajo de Santiago (verificado en vivo, filtro "Activas"). Se
+escriben directamente en el codigo (no viven en la base de datos) para
+que NUNCA se pierdan si Render reinicia o borra el sistema de archivos
+local del plan gratuito, y para que no se puedan editar por accidente
+desde el panel de admin.
 
-Para actualizar esta lista hay que editar este archivo directamente en
-GitHub (o en el codigo) y hacer commit a main; Render la tomara en el
-siguiente deploy.
+Para actualizar esta lista (por ejemplo cuando una vacante se cierre o
+se abra una nueva en CompuTrabajo) hay que editar este archivo
+directamente en GitHub (o en el codigo) y hacer commit a main; Render la
+tomara en el siguiente deploy.
 """
 
 VACANCIES = [
+    {
+        "slug": "gerente-corporativo",
+        "title": "Gerente Corporativo",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": False,
+        "company_label": "Confidencial",
+        "salary_display": "$80,000 - $90,000",
+        "salary_tier": "blue",
+        "positions": 1,
+        "objetivo": (
+            "Buscamos un gerente general experto en LIDEREAR las áreas de Legal, "
+            "Sistemas, Mejora Continua y Compras, asegurando la continuidad "
+            "operativa, el cumplimiento normativo y la eficiencia organizacional "
+            "de las diferentes unidades de negocio."
+        ),
+        "responsabilidades": "\n".join([
+            "Supervisar el cumplimiento legal y regulatorio de las empresas del grupo.",
+            "Gestionar proyectos estratégicos en las áreas de Sistemas, Compras, Legal y Mejora Continua.",
+            "Homologar procesos, infraestructura tecnológica y herramientas corporativas.",
+            "Implementar indicadores de desempeño y estrategias de mejora continua.",
+            "Coordinar equipos multidisciplinarios y dar seguimiento a proyectos corporativos.",
+            "Impulsar la eficiencia operativa y la estandarización de procesos.",
+        ]),
+        "requisitos": "\n".join([
+            "Licenciatura en Derecho, Ingeniería Industrial, Sistemas o carrera afín.",
+            "Experiencia de 5 a 8 años en posiciones gerenciales.",
+            "Experiencia gestionando áreas de soporte corporativo o servicios compartidos.",
+            "Liderazgo de equipos multidisciplinarios.",
+            "Deseable experiencia en sector energético o hidrocarburos.",
+            "Visión estratégica y orientación a resultados.",
+        ]),
+        "prestaciones": "Sueldo bruto mensual de $80-90,000 · Prestaciones superiores a las de ley · Seguro de Vida · Seguro de Gastos Médicos · Fondo de Ahorro · Apoyo mensual de gasolina · Lunes a viernes 8am-6pm · Zona Centro, SLP",
+        "status": "active",
+        "published_at": "2026-08-17",
+    },
     {
         "slug": "gerente-financiero-corporativo",
         "title": "Gerente Financiero Corporativo - Multiunidades",
@@ -53,218 +88,7 @@ VACANCIES = [
         ]),
         "prestaciones": "Sueldo bruto mensual hasta $120,000 · Seguro de Gastos Médicos Mayores (SGMM) · Fondo de Ahorro (FA) · Apoyo de transporte · Horario de lunes a viernes 8:30-18:00 · Zona Centro, SLP",
         "status": "active",
-        "published_at": "2026-08-17",
-    },
-    {
-        "slug": "director-operaciones-vivienda-en-serie",
-        "title": "Director de Operaciones - Vivienda en Serie",
-        "location": "Querétaro",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$110,000 - $130,000",
-        "salary_tier": "gold",
-        "positions": 1,
-        "objetivo": (
-            "Liderar la operación integral de proyectos de vivienda en serie en la "
-            "región de Querétaro, garantizando el cumplimiento de tiempos, "
-            "presupuestos y estándares de calidad en cada etapa de construcción y "
-            "entrega."
-        ),
-        "responsabilidades": "\n".join([
-            "Dirigir la planeación y ejecución operativa de los desarrollos habitacionales en construcción.",
-            "Supervisar avances de obra, calendarios de entrega y cumplimiento de presupuestos.",
-            "Coordinar con las áreas de construcción, ventas, gestoría y atención a clientes para asegurar entregas oportunas.",
-            "Negociar y dar seguimiento a contratistas, proveedores y subcontratistas clave.",
-            "Implementar indicadores de desempeño operativo y estrategias de mejora continua.",
-            "Garantizar el cumplimiento de normativas de construcción y seguridad en obra.",
-        ]),
-        "requisitos": "\n".join([
-            "Ingeniería Civil, Arquitectura o carrera afín.",
-            "8 años de experiencia en dirección de operaciones dentro del sector de vivienda o desarrollos inmobiliarios.",
-            "Experiencia comprobable liderando múltiples frentes de obra de manera simultánea.",
-            "Conocimiento en procesos de gestoría, permisos y normativa de construcción.",
-            "Liderazgo de equipos multidisciplinarios y visión estratégica de negocio.",
-            "Disponibilidad para visitar obra de forma constante.",
-        ]),
-        "prestaciones": "Prestaciones superiores a las de ley · Vehículo o apoyo de gasolina · Seguro de Gastos Médicos Mayores · Bono por cumplimiento de metas",
-        "status": "active",
-        "published_at": "2026-08-15",
-    },
-    {
-        "slug": "ceo-director-general-motocicletas",
-        "title": "CEO / Director General - Motocicletas",
-        "location": "Ciudad de México",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$140,000",
-        "salary_tier": "gold",
-        "positions": 1,
-        "objetivo": (
-            "Encabezar la dirección general de la operación de la agencia, "
-            "definiendo la estrategia comercial, financiera y operativa para "
-            "consolidar el liderazgo de la marca en el mercado de motocicletas."
-        ),
-        "responsabilidades": "\n".join([
-            "Definir y ejecutar la estrategia general del negocio: ventas, servicio, refacciones y financiamiento.",
-            "Liderar a los gerentes de área y asegurar el cumplimiento de los objetivos comerciales y financieros.",
-            "Supervisar la rentabilidad de la operación, el control de inventarios y la satisfacción del cliente.",
-            "Representar a la empresa ante proveedores, distribuidores y la marca representada.",
-            "Impulsar la apertura de nuevas líneas de negocio y la expansión de la operación.",
-            "Reportar resultados a la Dirección General Corporativa.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Administración, Negocios, Ingeniería o afín; deseable Maestría.",
-            "8 a 10 años de experiencia en dirección general o gerencia general, preferentemente en el sector automotriz o de motocicletas.",
-            "Sólida visión comercial, financiera y de operaciones.",
-            "Experiencia liderando equipos multidisciplinarios de alto desempeño.",
-            "Orientación a resultados y capacidad de negociación con marcas y distribuidores.",
-        ]),
-        "prestaciones": "Prestaciones superiores a las de ley · Bono anual por resultados · Seguro de Vida y GMM · Vehículo de la agencia",
-        "status": "active",
-        "published_at": "2026-08-12",
-    },
-    {
-        "slug": "gerente-corporativo",
-        "title": "Gerente Corporativo",
-        "location": "San Luis Potosí",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$80,000 - $90,000",
-        "salary_tier": "blue",
-        "positions": 1,
-        "objetivo": (
-            "Buscamos un gerente general experto en LIDEREAR las áreas de Legal, "
-            "Sistemas, Mejora Continua y Compras, asegurando la continuidad "
-            "operativa, el cumplimiento normativo y la eficiencia organizacional "
-            "de las diferentes unidades de negocio."
-        ),
-        "responsabilidades": "\n".join([
-            "Supervisar el cumplimiento legal y regulatorio de las empresas del grupo.",
-            "Gestionar proyectos estratégicos en las áreas de Sistemas, Compras, Legal y Mejora Continua.",
-            "Homologar procesos, infraestructura tecnológica y herramientas corporativas.",
-            "Implementar indicadores de desempeño y estrategias de mejora continua.",
-            "Coordinar equipos multidisciplinarios y dar seguimiento a proyectos corporativos.",
-            "Impulsar la eficiencia operativa y la estandarización de procesos.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Derecho, Ingeniería Industrial, Sistemas o carrera afín.",
-            "Experiencia de 5 a 8 años en posiciones gerenciales.",
-            "Experiencia gestionando áreas de soporte corporativo o servicios compartidos.",
-            "Liderazgo de equipos multidisciplinarios.",
-            "Deseable experiencia en sector energético o hidrocarburos.",
-            "Visión estratégica y orientación a resultados.",
-        ]),
-        "prestaciones": "Sueldo bruto mensual de $80-90,000 · Prestaciones superiores a las de ley · Seguro de Vida · Seguro de Gastos Médicos · Fondo de Ahorro · Apoyo mensual de gasolina · Lunes a viernes 8am-6pm · Zona Centro, SLP",
-        "status": "active",
-        "published_at": "2026-08-10",
-    },
-    {
-        "slug": "gerente-financiamiento-seguros-automotriz",
-        "title": "Gerente de Financiamiento y Seguros - Agencia Automotriz",
-        "location": "León",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$65,000 - $75,000",
-        "salary_tier": "blue",
-        "positions": 1,
-        "objetivo": (
-            "Liderar el área de financiamiento y seguros de la agencia, "
-            "maximizando la penetración de productos financieros y de protección "
-            "en cada venta, asegurando el cumplimiento normativo y la satisfacción "
-            "del cliente."
-        ),
-        "responsabilidades": "\n".join([
-            "Dirigir la estrategia de colocación de créditos, seguros y productos de protección (F&I).",
-            "Negociar y dar seguimiento a las relaciones con instituciones financieras y aseguradoras.",
-            "Supervisar y capacitar al equipo de asesores de financiamiento y seguros.",
-            "Garantizar el cumplimiento de políticas internas y normativa aplicable en materia financiera.",
-            "Analizar indicadores de penetración, rentabilidad y cartera para la toma de decisiones.",
-            "Colaborar con el área comercial para maximizar la conversión de financiamiento en cada venta.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Administración, Finanzas o carrera afín.",
-            "5 años de experiencia en puestos similares dentro del sector automotriz.",
-            "Conocimiento de productos de financiamiento, seguros y esquemas F&I.",
-            "Habilidades de negociación, liderazgo de equipos y orientación a resultados.",
-            "Manejo de indicadores financieros y herramientas de análisis.",
-        ]),
-        "prestaciones": "Prestaciones de ley y superiores · Esquema de comisiones por colocación · Capacitación continua",
-        "status": "active",
-        "published_at": "2026-08-08",
-    },
-    {
-        "slug": "subdirector-operativo-comercial-diesel",
-        "title": "Subdirector Operativo y Comercial - Comercializadora de Diesel",
-        "location": "Ciudad de México",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$75,000 - $85,000",
-        "salary_tier": "blue",
-        "positions": 1,
-        "objetivo": (
-            "Dirigir la operación y la estrategia comercial de la comercializadora, "
-            "asegurando el crecimiento rentable del negocio, el cumplimiento "
-            "normativo del sector energético y la eficiencia de la cadena de "
-            "suministro."
-        ),
-        "responsabilidades": "\n".join([
-            "Definir y ejecutar la estrategia comercial y operativa de la comercializadora de diesel.",
-            "Supervisar la cadena de suministro: abastecimiento, almacenamiento, distribución y logística.",
-            "Liderar la relación comercial con clientes clave, proveedores y autoridades regulatorias.",
-            "Garantizar el cumplimiento de la normativa vigente en materia energética y de seguridad.",
-            "Analizar indicadores de rentabilidad, volumetría y eficiencia operativa.",
-            "Coordinar equipos comerciales, operativos y administrativos.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Administración, Ingeniería, Negocios o afín.",
-            "6 a 8 años de experiencia en puestos gerenciales dentro del sector energético o de combustibles.",
-            "Conocimiento de la normativa aplicable a la comercialización de hidrocarburos.",
-            "Visión estratégica, comercial y capacidad de negociación.",
-            "Experiencia liderando equipos multidisciplinarios.",
-        ]),
-        "prestaciones": "Prestaciones superiores a las de ley · Bono por resultados · Seguro de Gastos Médicos Mayores",
-        "status": "active",
-        "published_at": "2026-08-05",
-    },
-    {
-        "slug": "gerente-servicios-compartidos",
-        "title": "Gerente de Servicios Compartidos - Corporativo Multiunidades",
-        "location": "San Luis Potosí",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$65,000 - $70,000",
-        "salary_tier": "blue",
-        "positions": 1,
-        "objetivo": (
-            "Liderar el modelo de servicios compartidos del corporativo, "
-            "estandarizando y optimizando los procesos administrativos, de "
-            "sistemas y de soporte para las distintas unidades de negocio del "
-            "grupo."
-        ),
-        "responsabilidades": "\n".join([
-            "Dirigir las áreas de servicios compartidos: administración, sistemas, compras y soporte corporativo.",
-            "Estandarizar procesos y políticas entre las diferentes unidades de negocio.",
-            "Implementar y dar seguimiento a indicadores de desempeño y eficiencia operativa.",
-            "Coordinar proyectos de mejora continua y transformación de procesos.",
-            "Gestionar la relación con proveedores estratégicos y prestadores de servicios.",
-            "Reportar resultados a la Dirección Corporativa.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Administración, Ingeniería Industrial o carrera afín.",
-            "5 a 7 años de experiencia en posiciones gerenciales dentro de esquemas de servicios compartidos o soporte corporativo.",
-            "Experiencia gestionando múltiples unidades de negocio de forma simultánea.",
-            "Habilidades de liderazgo, negociación y visión de mejora continua.",
-            "Deseable experiencia en sector energético, retail o multiunidades.",
-        ]),
-        "prestaciones": "Prestaciones superiores a las de ley · Fondo de ahorro · Seguro de Gastos Médicos Mayores",
-        "status": "active",
-        "published_at": "2026-08-03",
+        "published_at": "2026-08-13",
     },
     {
         "slug": "gerente-mercado-expansion-precios",
@@ -302,7 +126,197 @@ VACANCIES = [
         ]),
         "prestaciones": "$30,000 a $40,000 mensuales + prestaciones superiores a las de ley",
         "status": "active",
-        "published_at": "2026-07-30",
+        "published_at": "2026-08-18",
+    },
+    {
+        "slug": "chofer-empresa-construccion",
+        "title": "Chofer - Empresa de Construcción",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": False,
+        "company_label": "Confidencial",
+        "salary_display": "$16,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Responsable de realizar el traslado y entrega de materiales a "
+            "diferentes obras, así como apoyar en actividades de almacén, "
+            "inventarios y movimiento de personal y equipo, asegurando un "
+            "servicio puntual, seguro y organizado."
+        ),
+        "responsabilidades": "\n".join([
+            "Recoger materiales en tiendas y proveedores y trasladarlos a las diferentes obras.",
+            "Realizar carga y descarga de materiales cuando sea necesario.",
+            "Manejar camioneta de la empresa.",
+            "Organizar rutas, tiempos y entregas.",
+            "Apoyar en el movimiento de personal entre obras.",
+            "Llevar y recoger equipo y herramienta de la empresa.",
+            "Mantener control y registro del equipo rentado en las obras.",
+            "Apoyar en el manejo del almacén central e inventarios.",
+            "Realizar traslados y gestiones bancarias.",
+            "Mantener la unidad de trabajo en buenas condiciones y reportar cualquier incidencia.",
+        ]),
+        "requisitos": "\n".join([
+            "Experiencia previa como chofer o en logística de materiales (deseable).",
+            "Experiencia en manejo de inventarios o almacén.",
+            "Disponibilidad para apoyar en actividades fuera de horario cuando la operación lo requiera.",
+            "Excelente actitud de servicio y trato con clientes, proveedores y personal de obra.",
+            "Persona puntual, responsable, proactiva y organizada.",
+            "Capacidad para resolver problemas y trabajar de manera independiente.",
+        ]),
+        "prestaciones": "Sueldo $4,000 semanales libres (aprox. $16,000 mensuales) · Prestaciones de ley · Edad 25 a 45 años · Horario lunes a viernes 9:00-13:00 y 14:00-18:00, sábado 9:00-13:00 · Zona Av. Salvador Nava Martínez, SLP",
+        "status": "active",
+        "published_at": "2026-08-13",
+    },
+    {
+        "slug": "ejecutivo-pauta-digital-marketing",
+        "title": "Ejecutivo de Pauta Digital - Marketing",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": False,
+        "company_label": "Confidencial",
+        "salary_display": "$20,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Responsable de ejecutar y optimizar la pauta digital del portafolio "
+            "de marcas de un grupo automotriz con presencia en varias ciudades "
+            "de México, convirtiendo estrategias, presupuestos y materiales ya "
+            "definidos en campañas que generen leads al menor costo posible."
+        ),
+        "responsabilidades": "\n".join([
+            "Construir y publicar campañas en Meta Ads, Google Ads y TikTok Ads a partir de los briefs, materiales y presupuestos asignados.",
+            "Operar la pauta de un portafolio de marcas automotrices y sus líneas de negocio.",
+            "Redactar el texto principal de los anuncios y generar variantes para pruebas A/B.",
+            "Ejecutar el flujo de aprobación de campañas: cargar copys, dar seguimiento y liberar.",
+            "Controlar el presupuesto asignado y alertar cualquier desviación.",
+            "Mantener el dashboard de resultados y validar que los leads lleguen completos al CRM.",
+        ]),
+        "requisitos": "\n".join([
+            "2 a 3 años operando campañas en Meta Ads y Google Ads con cuentas propias (no como apoyo).",
+            "Manejo de Meta Business Manager y Google Ads a nivel ejecución.",
+            "Google Analytics 4 a nivel lectura y validación de conversiones.",
+            "Capacidad de administrar varias cuentas en paralelo sin perder el detalle.",
+            "Deseable: certificaciones de Google Ads y Meta Blueprint, experiencia en generación de leads en sectores de ticket alto (automotriz, inmobiliaria, retail).",
+        ]),
+        "prestaciones": "Sueldo de $20,000 mensuales · Prestaciones de ley · Presupuesto real y marcas consolidadas para operar · Lunes a viernes 9:00-18:00 y sábados hasta medio día · Zona Lomas, SLP",
+        "status": "active",
+        "published_at": "2026-08-12",
+    },
+    {
+        "slug": "barista-cafeteria",
+        "title": "Barista - Cafetería",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": False,
+        "company_label": "Confidencial",
+        "salary_display": "$11,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Buscamos un(a) Barista apasionado(a) por el café y el servicio al "
+            "cliente, con actitud positiva, gusto por trabajar en equipo y "
+            "entusiasmo por crear experiencias memorables para las familias que "
+            "visitan la cafetería."
+        ),
+        "responsabilidades": "\n".join([
+            "Preparar bebidas calientes y frías siguiendo los estándares de calidad.",
+            "Mantener limpia y organizada el área de cafetería.",
+            "Brindar atención cálida y amable a los clientes.",
+            "Apoyar en el control básico de insumos y abastecimiento.",
+            "Garantizar una excelente presentación de bebidas y alimentos.",
+            "Cumplir con las normas de higiene y seguridad alimentaria.",
+            "Colaborar con el equipo para ofrecer una experiencia excepcional.",
+        ]),
+        "requisitos": "\n".join([
+            "Experiencia previa como barista (deseable).",
+            "Conocimiento básico en preparación de café y bebidas.",
+            "Excelente actitud de servicio.",
+            "Responsable, puntual y organizado(a).",
+            "Facilidad para trabajar en equipo.",
+            "Disponibilidad para laborar de martes a domingo.",
+        ]),
+        "prestaciones": "Sueldo de $11,000 mensuales · Prestaciones de ley · Propinas · Capacitación continua · Horario martes a domingo 10:00-14:00 y 16:00-19:00 · Zona San Luis Potosí (por Costco)",
+        "status": "active",
+        "published_at": "2026-08-11",
+    },
+    {
+        "slug": "coordinador-comercial-club-deportivo",
+        "title": "Coordinador Comercial - Club Deportivo",
+        "location": "Soledad de Graciano Sánchez",
+        "modality": "Presencial",
+        "is_confidential": False,
+        "company_label": "Confidencial",
+        "salary_display": "$16,000 + comisiones",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Liderar la estrategia comercial del Club para incrementar la "
+            "captación, conversión y retención de membresías, desarrollando un "
+            "equipo comercial de alto desempeño y asegurando un crecimiento "
+            "sostenible de los ingresos."
+        ),
+        "responsabilidades": "\n".join([
+            "Diseñar y administrar el funnel comercial.",
+            "Gestionar la captación de prospectos y el cierre de membresías.",
+            "Desarrollar alianzas estratégicas y membresías corporativas.",
+            "Identificar oportunidades de crecimiento y mejora comercial.",
+            "Liderar, capacitar y desarrollar al equipo de ventas.",
+            "Dar seguimiento a indicadores comerciales (KPIs) y al CRM.",
+            "Elaborar reportes comerciales y proponer estrategias para mejorar resultados.",
+            "Implementar estrategias de fidelización y satisfacción de los miembros.",
+            "Coordinar acciones para reducir la cancelación de membresías y fortalecer la experiencia del cliente.",
+        ]),
+        "requisitos": "\n".join([
+            "Licenciatura en Administración, Mercadotecnia, Negocios o carrera afín.",
+            "Más de 5 años de experiencia en ventas de servicios B2C.",
+            "Experiencia liderando equipos comerciales.",
+            "Manejo de CRM, indicadores comerciales y herramientas digitales.",
+            "Deseable experiencia en clubes deportivos, fitness, hospitalidad o empresas de servicios.",
+        ]),
+        "prestaciones": "Sueldo de $16,000 libres mensuales + comisiones · Bonos por cumplimiento de KPIs · Prestaciones de ley (IMSS, INFONAVIT, aguinaldo, vacaciones, prima vacacional) · Horario 9:00-14:00 y 16:00-19:00 lunes a viernes, sábados medio día",
+        "status": "active",
+        "published_at": "2026-08-13",
+    },
+    {
+        "slug": "lider-capital-humano-club-deportivo",
+        "title": "Líder de Capital Humano - Club Deportivo",
+        "location": "Soledad de Graciano Sánchez",
+        "modality": "Presencial",
+        "is_confidential": False,
+        "company_label": "Confidencial",
+        "salary_display": "$16,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Diseñar, implementar y consolidar la estrategia integral de Talento "
+            "y Cultura del Club, combinando la operación de Recursos Humanos con "
+            "el desarrollo organizacional para atraer, desarrollar y retener al "
+            "mejor talento, y fortalecer una cultura de alto desempeño, "
+            "bienestar y servicio."
+        ),
+        "responsabilidades": "\n".join([
+            "Gestionar el ciclo completo de reclutamiento y selección.",
+            "Coordinar altas, bajas, expedientes, capacitación e incidencias de nómina.",
+            "Administrar descripciones de puesto, headcount y planeación de personal.",
+            "Garantizar el cumplimiento de la legislación laboral y procesos administrativos.",
+            "Coordinar inducción, convenios universitarios y programas de practicantes.",
+            "Implementar programas de coaching y desarrollo para líderes, y diseñar planes de desarrollo individual.",
+            "Medir y mejorar el clima organizacional; crear programas de reconocimiento, integración y bienestar.",
+            "Automatizar procesos de Recursos Humanos mediante herramientas digitales e inteligencia artificial.",
+            "Crear una bolsa permanente de talento e implementar indicadores y procesos escalables para el crecimiento del Club.",
+        ]),
+        "requisitos": "\n".join([
+            "Licenciatura en Psicología, Recursos Humanos, Administración o carrera afín.",
+            "Mínimo 4 años de experiencia liderando Recursos Humanos de forma integral.",
+            "Experiencia en coaching, desarrollo organizacional o gestión del desempeño.",
+            "Conocimiento sólido de legislación laboral mexicana.",
+            "Experiencia diseñando e implementando procesos desde cero.",
+            "Deseable experiencia en clubes deportivos, hospitalidad, retail o empresas de servicio, y familiaridad con herramientas de IA y automatización.",
+        ]),
+        "prestaciones": "Sueldo $16,000 libres mensuales · Bonos por cumplimiento de KPIs · Prestaciones de ley (IMSS, INFONAVIT, aguinaldo, vacaciones, prima vacacional) · Horario lunes a viernes 9:00-14:00 y 16:00-19:00, sábados medio día",
+        "status": "active",
+        "published_at": "2026-08-16",
     },
     {
         "slug": "lider-distribucion-operaciones-hidrocarburos",
@@ -339,41 +353,7 @@ VACANCIES = [
         ]),
         "prestaciones": "Sueldo de $35,000 a $45,000 pesos brutos mensuales, de acuerdo con experiencia · Prestaciones superiores a las de ley · Lunes a viernes de 8:00 a.m. a 5:00 p.m.",
         "status": "active",
-        "published_at": "2026-07-28",
-    },
-    {
-        "slug": "gerente-regional-estaciones-bajio",
-        "title": "Gerente Regional de Estaciones - Bajío",
-        "location": "León",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$45,000 - $55,000",
-        "salary_tier": None,
-        "positions": 1,
-        "objetivo": (
-            "Dirigir la operación de la red de estaciones de servicio en la "
-            "región Bajío, garantizando el cumplimiento de metas comerciales, "
-            "estándares de servicio y normativa vigente en cada punto de venta."
-        ),
-        "responsabilidades": "\n".join([
-            "Supervisar la operación diaria de las estaciones de servicio asignadas a la región.",
-            "Garantizar el cumplimiento de metas de venta, rentabilidad e indicadores comerciales.",
-            "Dar seguimiento a estándares de servicio, imagen e inventarios en cada estación.",
-            "Liderar y capacitar a los gerentes y encargados de cada punto de venta.",
-            "Asegurar el cumplimiento de normativa en materia de seguridad e hidrocarburos.",
-            "Coordinar con proveedores y áreas corporativas para el abasto oportuno.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Administración, Ingeniería o carrera afín.",
-            "4 a 6 años de experiencia en gerencia regional o multi-unidad, preferentemente en estaciones de servicio o retail.",
-            "Disponibilidad para viajar dentro de la región Bajío.",
-            "Liderazgo de equipos, orientación a resultados y capacidad de análisis comercial.",
-            "Conocimiento de normativa aplicable a estaciones de servicio (deseable).",
-        ]),
-        "prestaciones": "Prestaciones de ley y superiores · Apoyo de gasolina y viáticos · Bono por cumplimiento de metas",
-        "status": "active",
-        "published_at": "2026-07-25",
+        "published_at": "2026-08-16",
     },
 ]
 
