@@ -11,6 +11,7 @@ from werkzeug.utils import secure_filename
 import db
 import notifications
 import vacantes_data
+import blog_data
 from config import UPLOAD_DIR, WHATSAPP_NUMBER, WHATSAPP_TEXT
 
 app = Flask(__name__)
@@ -84,7 +85,9 @@ def inicio():
     featured_vacancies = sorted(
         active_vacancies, key=lambda v: _salary_value(v.get("salary_display")), reverse=True
     )[:3]
-    return render_template("inicio.html", featured_vacancies=featured_vacancies)
+    # "Blog": los 3 artículos fijos (vienen de blog_data.py, no de la base de datos).
+    latest_posts = blog_data.get_all()
+    return render_template("inicio.html", featured_vacancies=featured_vacancies, latest_posts=latest_posts)
 
 
 @app.route("/soluciones")
@@ -225,6 +228,27 @@ def vacante_apply(slug):
     return render_template("vacante_apply.html", v=v, sent=False)
 
 
+# ---------------------------------------------------------------
+#  BLOG
+#
+#  Igual que las vacantes: 3 artículos fijos en el código
+#  (blog_data.py), no vienen de la base de datos, para que no se
+#  pierdan con los reinicios del plan gratuito de Render.
+# ---------------------------------------------------------------
+
+@app.route("/blog")
+def blog():
+    return render_template("blog_list.html", posts=blog_data.get_all())
+
+
+@app.route("/blog/<slug>")
+def blog_detail(slug):
+    p = blog_data.get_by_slug(slug)
+    if not p:
+        abort(404)
+    return render_template("blog_detail.html", p=p)
+
+
 # Register the admin panel + bot API blueprints
 from admin_panel import admin_bp  # noqa: E402
 from bot_api import bot_api_bp  # noqa: E402
@@ -241,4 +265,3 @@ def not_found(e):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=os.environ.get("FLASK_DEBUG", "0") == "1")
-
