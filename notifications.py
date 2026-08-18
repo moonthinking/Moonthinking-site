@@ -47,14 +47,22 @@ def _build_attachment(filename):
     display_name = filename.split("-", 2)[-1] if filename.count("-") >= 2 else filename
     return {"filename": display_name, "content": content}
 
-# label, field key — in display order for the notification email
-LEAD_FIELDS = [
+# label, field key — in display order for the notification email.
+# QUICK_FIELDS is just the "Tu contacto" card (always visible in the form);
+# the rest belong to the hidden "formato completo" section — those <select>
+# fields still submit a default value even when that section stays hidden,
+# so we only show them in the email when the person actually opened and
+# used the full format (see is_full in send_lead_email below).
+QUICK_FIELDS = [
     ("Empresa", "company_name"),
     ("Contacto", "contact_name"),
     ("Teléfono", "contact_phone"),
     ("Correo", "contact_email"),
     ("Puesto a cubrir", "position_title"),
     ("Comentarios / resumen", "additional_comments"),
+]
+
+LEAD_FIELDS = QUICK_FIELDS + [
     ("Objetivo del puesto", "position_objective"),
     ("Actividades principales", "position_activities"),
     ("Días de trabajo", "work_days"),
@@ -132,8 +140,9 @@ def send_lead_email(lead):
     company = (lead.get("company_name") or "").strip() or "Empresa sin especificar"
     subject = f"Nuevo contacto ({kind}) — {company}"
 
+    fields_to_show = LEAD_FIELDS if is_full else QUICK_FIELDS
     rows = []
-    for label, key in LEAD_FIELDS:
+    for label, key in fields_to_show:
         value = (lead.get(key) or "").strip()
         if value:
             rows.append(
