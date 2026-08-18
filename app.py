@@ -61,12 +61,17 @@ def vacancy_to_view(row):
 
 def _salary_value(salary_display):
     """Best-effort numeric value pulled out of a free-text salary string
-    (e.g. '$65,000 MXN' -> 65000), used only to rank vacancies by pay."""
+    (e.g. '$65,000 MXN' -> 65000, '$80,000 - $90,000 MXN' -> 90000), used
+    only to rank vacancies by pay. Picks the highest individual number
+    found, instead of concatenating every digit in the string — that old
+    approach turned a range like '$80,000 - $90,000' into 8000090000,
+    which wrongly outranked a real, higher single salary like $120,000."""
     import re
     if not salary_display:
         return 0
-    digits = re.sub(r"[^\d]", "", salary_display)
-    return int(digits) if digits else 0
+    numbers = re.findall(r"\d[\d,]*", salary_display)
+    values = [int(n.replace(",", "")) for n in numbers if n.replace(",", "")]
+    return max(values) if values else 0
 
 
 @app.route("/")
