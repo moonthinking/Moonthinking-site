@@ -12,9 +12,9 @@ import os
 import urllib.request
 import urllib.error
 
-RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
-RESEND_FROM = os.environ.get("RESEND_FROM", "Moonthinking <notificaciones@moonthinking.com>")
-RESEND_TO = os.environ.get("RESEND_TO", "reclutamiento.cv@moonthinking.com")
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "").strip()
+RESEND_FROM = os.environ.get("RESEND_FROM", "Moonthinking <notificaciones@moonthinking.com>").strip()
+RESEND_TO = os.environ.get("RESEND_TO", "reclutamiento.cv@moonthinking.com").strip()
 
 # label, field key — in display order for the notification email
 LEAD_FIELDS = [
@@ -75,6 +75,13 @@ def _send(subject, html):
     try:
         with urllib.request.urlopen(req, timeout=8) as resp:
             return resp.status < 300
+    except urllib.error.HTTPError as e:
+        try:
+            detail = e.read().decode("utf-8", errors="replace")
+        except Exception:
+            detail = "(sin detalle)"
+        print(f"[notifications] Error enviando correo '{subject}': HTTP {e.code} — {detail}")
+        return False
     except urllib.error.URLError as e:
         print(f"[notifications] Error enviando correo '{subject}': {e}")
         return False
