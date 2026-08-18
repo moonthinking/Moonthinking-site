@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Beneficios de contratar un headhunter: velocidad, tiempo y dinero">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01346C"/>
+      <stop offset="55%" stop-color="#004C85"/>
+      <stop offset="130%" stop-color="#0CABDA"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g3)"/>
+  <circle cx="65" cy="70" r="2" fill="#ffffff" opacity=".3"/>
+  <circle cx="535" cy="90" r="2" fill="#ffffff" opacity=".3"/>
+  <circle cx="70" cy="320" r="1.8" fill="#ffffff" opacity=".3"/>
+  <circle cx="530" cy="330" r="1.8" fill="#ffffff" opacity=".25"/>
+  <!-- stopwatch, line style, representing speed/time -->
+  <g transform="translate(230,90)" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="60" y1="0" x2="60" y2="18"/>
+    <line x1="40" y1="6" x2="80" y2="6"/>
+    <circle cx="60" cy="120" r="82" opacity=".95"/>
+    <line x1="60" y1="120" x2="60" y2="66" opacity=".95"/>
+    <line x1="60" y1="120" x2="98" y2="120" opacity=".95"/>
+  </g>
+  <!-- coin with peso/dollar sign, representing money saved -->
+  <g transform="translate(370,190)">
+    <circle cx="0" cy="0" r="46" fill="#ffffff"/>
+    <text x="0" y="16" font-family="Sora, Inter, sans-serif" font-size="52" font-weight="800" fill="#0996bd" text-anchor="middle">$</text>
+  </g>
+  <!-- small motion lines suggesting speed -->
+  <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".5">
+    <line x1="60" y1="330" x2="120" y2="330"/>
+    <line x1="60" y1="345" x2="100" y2="345"/>
+    <line x1="60" y1="360" x2="140" y2="360"/>
+  </g>
+</svg>
