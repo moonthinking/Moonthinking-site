@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Entrevista de trabajo con headhunter">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01346C"/>
+      <stop offset="55%" stop-color="#004C85"/>
+      <stop offset="130%" stop-color="#0CABDA"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g1)"/>
+  <circle cx="60" cy="340" r="2" fill="#ffffff" opacity=".35"/>
+  <circle cx="120" cy="70" r="2" fill="#ffffff" opacity=".3"/>
+  <circle cx="520" cy="60" r="2" fill="#ffffff" opacity=".35"/>
+  <circle cx="470" cy="330" r="2" fill="#ffffff" opacity=".3"/>
+  <circle cx="300" cy="40" r="1.6" fill="#ffffff" opacity=".3"/>
+  <circle cx="40" cy="200" r="1.6" fill="#ffffff" opacity=".25"/>
+  <circle cx="560" cy="220" r="1.6" fill="#ffffff" opacity=".25"/>
+  <!-- two people facing each other in an interview, line style -->
+  <g transform="translate(190,120)" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+    <circle cx="30" cy="30" r="26"/>
+    <path d="M -18 150 C -18 95 8 75 30 75 C 52 75 78 95 78 150"/>
+  </g>
+  <g transform="translate(300,120)" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".7">
+    <circle cx="90" cy="30" r="26"/>
+    <path d="M 42 150 C 42 95 68 75 90 75 C 112 75 138 95 138 150"/>
+  </g>
+  <!-- speech / checkmark badge between them -->
+  <g transform="translate(255,60)">
+    <circle cx="45" cy="30" r="30" fill="#ffffff"/>
+    <path d="M31 30 L41 40 L60 18" fill="none" stroke="#0CABDA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
