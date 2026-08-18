@@ -69,6 +69,8 @@ def _send(subject, html):
         headers={
             "Authorization": f"Bearer {RESEND_API_KEY}",
             "Content-Type": "application/json",
+            "User-Agent": "Moonthinking-Site/1.0 (+https://www.moonthinking.com)",
+            "Accept": "application/json",
         },
         method="POST",
     )
