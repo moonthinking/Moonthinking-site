@@ -7,14 +7,45 @@ never block a lead or application from being saved to the database, since
 it's always visible in the admin panel regardless.
 """
 
+import base64
 import json
 import os
 import urllib.request
 import urllib.error
 
+from config import UPLOAD_DIR
+
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "").strip()
 RESEND_FROM = os.environ.get("RESEND_FROM", "Moonthinking <notificaciones@moonthinking.com>").strip()
 RESEND_TO = os.environ.get("RESEND_TO", "reclutamiento.cv@moonthinking.com").strip()
+
+# Resend limits total request size to 40MB; our uploads are already capped
+# at 8MB by Flask (MAX_CONTENT_LENGTH), so any saved file is safely under
+# that — this is just an extra safety net.
+MAX_ATTACHMENT_BYTES = 20 * 1024 * 1024
+
+
+def _build_attachment(filename):
+    """Read a previously-saved upload from disk and return it in the shape
+    Resend's API expects for an attachment, or None if it can't be read
+    (missing file, too big, etc.) — attaching is a nice-to-have and should
+    never block the notification email itself."""
+    if not filename:
+        return None
+    path = os.path.join(UPLOAD_DIR, filename)
+    try:
+        if os.path.getsize(path) > MAX_ATTACHMENT_BYTES:
+            print(f"[notifications] '{filename}' es muy grande para adjuntar, se omite del correo.")
+            return None
+        with open(path, "rb") as f:
+            content = base64.b64encode(f.read()).decode("ascii")
+    except OSError as e:
+        print(f"[notifications] No se pudo adjuntar '{filename}' al correo: {e}")
+        return None
+    # Strip the "lead-<timestamp>-" / "app-<timestamp>-" prefix we add when
+    # saving, so the attachment shows up with a clean, recognizable name.
+    display_name = filename.split("-", 2)[-1] if filename.count("-") >= 2 else filename
+    return {"filename": display_name, "content": content}
 
 # label, field key — in display order for the notification email
 LEAD_FIELDS = [
@@ -51,7 +82,7 @@ LEAD_FIELDS = [
 ]
 
 
-def _send(subject, html):
+def _send(subject, html, attachment_filename=None):
     if not RESEND_API_KEY:
         print(f"[notifications] RESEND_API_KEY no configurada — no se envió el correo '{subject}', "
               f"pero el registro ya quedó guardado en el panel de administración.")
@@ -63,6 +94,9 @@ def _send(subject, html):
         "subject": subject,
         "html": html,
     }
+    attachment = _build_attachment(attachment_filename)
+    if attachment:
+        payload["attachments"] = [attachment]
     req = urllib.request.Request(
         "https://api.resend.com/emails",
         data=json.dumps(payload).encode("utf-8"),
@@ -106,9 +140,10 @@ def send_lead_email(lead):
                 f"<tr><td style='padding:6px 12px;color:#666;vertical-align:top;white-space:nowrap'>{label}</td>"
                 f"<td style='padding:6px 12px'>{value}</td></tr>"
             )
+    attachment_filename = lead.get("attachment_filename")
     attachment_note = ""
-    if lead.get("attachment_filename"):
-        attachment_note = "<p style='margin-top:14px;color:#666'>Adjuntaron un archivo — revísalo en el panel de administración, sección Solicitudes.</p>"
+    if attachment_filename:
+        attachment_note = "<p style='margin-top:14px;color:#666'>Adjuntaron un archivo — lo encuentras aquí abajo, o en el panel de administración, sección Solicitudes.</p>"
 
     html = f"""
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:640px">
@@ -119,7 +154,7 @@ def send_lead_email(lead):
       <p style="margin-top:20px;color:#666">Puedes ver el detalle completo y responder desde el panel de administración, sección "Solicitudes".</p>
     </div>
     """
-    return _send(subject, html)
+    return _send(subject, html, attachment_filename=attachment_filename)
 
 
 def send_application_email(application):
@@ -146,9 +181,10 @@ def send_application_email(application):
                 f"<td style='padding:6px 12px'>{value}</td></tr>"
             )
 
+    resume_filename = application.get("resume_filename")
     cv_note = (
-        "<p style='margin-top:14px;color:#0a7a3d;font-weight:600'>Adjuntó su CV — descárgalo desde el panel de administración, sección Postulaciones.</p>"
-        if application.get("resume_filename")
+        "<p style='margin-top:14px;color:#0a7a3d;font-weight:600'>Adjuntó su CV — lo encuentras aquí abajo, o en el panel de administración, sección Postulaciones.</p>"
+        if resume_filename
         else "<p style='margin-top:14px;color:#b8860b'>No adjuntó CV en este formulario.</p>"
     )
 
@@ -160,4 +196,4 @@ def send_application_email(application):
       <p style="margin-top:20px;color:#666">Puedes ver el detalle completo y descargar el CV desde el panel de administración, sección "Postulaciones".</p>
     </div>
     """
-    return _send(subject, html)
+    return _send(subject, html, attachment_filename=resume_filename)
