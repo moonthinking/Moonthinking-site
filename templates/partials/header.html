@@ -1,19 +1,24 @@
-
 <header class="site on-dark">
   <div class="wrap">
     <a href="{{ url_for('inicio') }}" class="logo">
       <img class="white" src="{{ url_for('static', filename='img/logo_white.png') }}" alt="Moonthinking">
       <img class="color" src="{{ url_for('static', filename='img/logo_color.png') }}" alt="Moonthinking">
     </a>
-    <nav>
+    <nav id="site-nav">
       <a href="{{ url_for('inicio') }}">Inicio</a>
       <a href="{{ url_for('nosotros') }}">Nosotros</a>
       <a href="{{ url_for('soluciones') }}">Soluciones</a>
       <a href="{{ url_for('blog') }}">Blog</a>
+      <a href="{{ url_for('vacantes') }}" class="nav-only-mobile">Vacantes activas</a>
+      <a href="{{ url_for('empresas') }}" class="nav-only-mobile">Quiero contratar</a>
     </nav>
     <div class="cta-group">
       <a href="{{ url_for('vacantes') }}" class="btn btn-white btn-sm">Vacantes activas</a>
       <a href="{{ url_for('empresas') }}" class="btn btn-primary btn-sm">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+      <span class="icon icon-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+      <span class="icon icon-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+    </button>
   </div>
 </header>
