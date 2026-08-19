@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS leads (
     needs_vehicle TEXT, payment_method TEXT,
     candidate_personality TEXT, vacancy_type TEXT, has_procedures_manual TEXT,
     additional_comments TEXT, attachment_filename TEXT,
+    company_description TEXT, previous_employee_reason TEXT, improvement_feedback TEXT,
     status TEXT NOT NULL DEFAULT 'new',
     created_at TEXT NOT NULL
 );
