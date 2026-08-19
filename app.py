@@ -110,6 +110,7 @@ def empresas():
             "needs_vehicle", "payment_method",
             "candidate_personality", "vacancy_type", "has_procedures_manual",
             "additional_comments",
+            "company_description", "previous_employee_reason", "improvement_feedback",
         ]
         values = {f: request.form.get(f, "").strip() for f in fields}
 
