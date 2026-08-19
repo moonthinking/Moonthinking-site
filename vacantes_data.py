@@ -128,47 +128,7 @@ VACANCIES = [
         "status": "active",
         "published_at": "2026-08-18",
     },
-    {
-        "slug": "chofer-empresa-construccion",
-        "title": "Chofer - Empresa de Construcción",
-        "location": "San Luis Potosí",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$16,000",
-        "salary_tier": None,
-        "positions": 1,
-        "objetivo": (
-            "Responsable de realizar el traslado y entrega de materiales a "
-            "diferentes obras, así como apoyar en actividades de almacén, "
-            "inventarios y movimiento de personal y equipo, asegurando un "
-            "servicio puntual, seguro y organizado."
-        ),
-        "responsabilidades": "\n".join([
-            "Recoger materiales en tiendas y proveedores y trasladarlos a las diferentes obras.",
-            "Realizar carga y descarga de materiales cuando sea necesario.",
-            "Manejar camioneta de la empresa.",
-            "Organizar rutas, tiempos y entregas.",
-            "Apoyar en el movimiento de personal entre obras.",
-            "Llevar y recoger equipo y herramienta de la empresa.",
-            "Mantener control y registro del equipo rentado en las obras.",
-            "Apoyar en el manejo del almacén central e inventarios.",
-            "Realizar traslados y gestiones bancarias.",
-            "Mantener la unidad de trabajo en buenas condiciones y reportar cualquier incidencia.",
-        ]),
-        "requisitos": "\n".join([
-            "Experiencia previa como chofer o en logística de materiales (deseable).",
-            "Experiencia en manejo de inventarios o almacén.",
-            "Disponibilidad para apoyar en actividades fuera de horario cuando la operación lo requiera.",
-            "Excelente actitud de servicio y trato con clientes, proveedores y personal de obra.",
-            "Persona puntual, responsable, proactiva y organizada.",
-            "Capacidad para resolver problemas y trabajar de manera independiente.",
-        ]),
-        "prestaciones": "Sueldo $4,000 semanales libres (aprox. $16,000 mensuales) · Prestaciones de ley · Edad 25 a 45 años · Horario lunes a viernes 9:00-13:00 y 14:00-18:00, sábado 9:00-13:00 · Zona Av. Salvador Nava Martínez, SLP",
-        "status": "active",
-        "published_at": "2026-08-13",
-    },
-    {
+        {
         "slug": "ejecutivo-pauta-digital-marketing",
         "title": "Ejecutivo de Pauta Digital - Marketing",
         "location": "San Luis Potosí",
@@ -203,44 +163,7 @@ VACANCIES = [
         "status": "active",
         "published_at": "2026-08-12",
     },
-    {
-        "slug": "barista-cafeteria",
-        "title": "Barista - Cafetería",
-        "location": "San Luis Potosí",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$11,000",
-        "salary_tier": None,
-        "positions": 1,
-        "objetivo": (
-            "Buscamos un(a) Barista apasionado(a) por el café y el servicio al "
-            "cliente, con actitud positiva, gusto por trabajar en equipo y "
-            "entusiasmo por crear experiencias memorables para las familias que "
-            "visitan la cafetería."
-        ),
-        "responsabilidades": "\n".join([
-            "Preparar bebidas calientes y frías siguiendo los estándares de calidad.",
-            "Mantener limpia y organizada el área de cafetería.",
-            "Brindar atención cálida y amable a los clientes.",
-            "Apoyar en el control básico de insumos y abastecimiento.",
-            "Garantizar una excelente presentación de bebidas y alimentos.",
-            "Cumplir con las normas de higiene y seguridad alimentaria.",
-            "Colaborar con el equipo para ofrecer una experiencia excepcional.",
-        ]),
-        "requisitos": "\n".join([
-            "Experiencia previa como barista (deseable).",
-            "Conocimiento básico en preparación de café y bebidas.",
-            "Excelente actitud de servicio.",
-            "Responsable, puntual y organizado(a).",
-            "Facilidad para trabajar en equipo.",
-            "Disponibilidad para laborar de martes a domingo.",
-        ]),
-        "prestaciones": "Sueldo de $11,000 mensuales · Prestaciones de ley · Propinas · Capacitación continua · Horario martes a domingo 10:00-14:00 y 16:00-19:00 · Zona San Luis Potosí (por Costco)",
-        "status": "active",
-        "published_at": "2026-08-11",
-    },
-    {
+        {
         "slug": "coordinador-comercial-club-deportivo",
         "title": "Coordinador Comercial - Club Deportivo",
         "location": "Soledad de Graciano Sánchez",
