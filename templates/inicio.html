@@ -5,7 +5,7 @@
   <section class="hero">
     <div class="plexus"><img src="{{ url_for('static', filename='img/plexus_hero.svg') }}" alt=""></div>
     <div class="wrap">
-      <span class="badge">Más de 8 años acompañando empresas en su crecimiento</span>
+      <span class="badge">+8 años construyendo relaciones de confianza</span>
       <h1>Encontramos al talento que tu empresa necesita para crecer.</h1>
       <p class="sub">Búsqueda y selección especializada de profesionales y ejecutivos en México. Procesos cercanos, ágiles y enfocados en resultados.</p>
       <div class="cta-row">
@@ -37,7 +37,7 @@
       <div class="grid-3">
         {% for v in featured_vacancies %}
         <div class="card vac-card">
-          <div class="top-row"><span></span>{% if v.is_confidential %}<span class="tag-conf">Confidencial</span>{% endif %}</div>
+          <div class="top-row"><span></span></div>
           <h3><a href="{{ url_for('vacante_detail', slug=v.slug) }}" style="color:inherit;text-decoration:none">{{ v.title }}</a></h3>
           <div class="meta">
             <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span>{{ v.location }}</span>

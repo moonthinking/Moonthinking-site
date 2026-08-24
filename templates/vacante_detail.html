@@ -11,7 +11,6 @@
 
       <div id="detail-example" class="detail-wrap" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:44px">
         <div class="detail-main">
-          {% if v.is_confidential %}<span class="tag-conf" style="margin-bottom:10px;display:inline-block">Confidencial</span>{% endif %}
           <h1>{{ v.title }}</h1>
           <div class="detail-meta">
             <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span>{{ v.location }}</span>
@@ -70,4 +69,3 @@
 
   {% include "partials/footer.html" %}
 {% endblock %}
-
