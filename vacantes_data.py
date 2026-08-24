@@ -2,281 +2,402 @@
 """
 Vacantes fijas del sitio publico.
 
-Estas son las vacantes que estan REALMENTE ACTIVAS en la cuenta de
-CompuTrabajo de Santiago (verificado en vivo, filtro "Activas"). Se
-escriben directamente en el codigo (no viven en la base de datos) para
-que NUNCA se pierdan si Render reinicia o borra el sistema de archivos
-local del plan gratuito, y para que no se puedan editar por accidente
-desde el panel de admin.
+Estos son los 13 perfiles de vacante "de planta" del sitio: los roles y
+sectores que de verdad mas se repiten en el historico real de 603
+vacantes de Moonthinking (verificado por rol, nivel y sector), pensados
+para quedar fijos en la pagina de Vacantes como perfiles de referencia
+(no vacantes puntuales de un cliente especifico). Se escriben
+directamente en el codigo (no viven en la base de datos) para que NUNCA
+se pierdan si Render reinicia o borra el sistema de archivos local del
+plan gratuito, y para que no se puedan editar por accidente desde el
+panel de admin.
 
-Para actualizar esta lista (por ejemplo cuando una vacante se cierre o
-se abra una nueva en CompuTrabajo) hay que editar este archivo
-directamente en GitHub (o en el codigo) y hacer commit a main; Render la
-tomara en el siguiente deploy.
+Para actualizar esta lista hay que editar este archivo directamente en
+GitHub (o en el codigo) y hacer commit a main; Render la tomara en el
+siguiente deploy.
 """
 
 VACANCIES = [
     {
-        "slug": "gerente-corporativo",
-        "title": "Gerente Corporativo",
+        "slug": "director-general-grupo-corporativo",
+        "title": "Director General - Grupo Corporativo",
         "location": "San Luis Potosí",
         "modality": "Presencial",
-        "is_confidential": False,
+        "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$80,000 - $90,000",
-        "salary_tier": "blue",
+        "salary_display": "$150,000",
+        "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Buscamos un gerente general experto en LIDEREAR las áreas de Legal, "
-            "Sistemas, Mejora Continua y Compras, asegurando la continuidad "
-            "operativa, el cumplimiento normativo y la eficiencia organizacional "
-            "de las diferentes unidades de negocio."
+            "Dirigir la operación y estrategia de un grupo con varias unidades "
+            "de negocio, garantizando resultados y gobernanza corporativa."
         ),
         "responsabilidades": "\n".join([
-            "Supervisar el cumplimiento legal y regulatorio de las empresas del grupo.",
-            "Gestionar proyectos estratégicos en las áreas de Sistemas, Compras, Legal y Mejora Continua.",
-            "Homologar procesos, infraestructura tecnológica y herramientas corporativas.",
-            "Implementar indicadores de desempeño y estrategias de mejora continua.",
-            "Coordinar equipos multidisciplinarios y dar seguimiento a proyectos corporativos.",
-            "Impulsar la eficiencia operativa y la estandarización de procesos.",
+            "Definir la estrategia y objetivos del grupo.",
+            "Supervisar a los directores de cada unidad de negocio.",
+            "Aprobar presupuestos, inversiones y expansión.",
+            "Reportar resultados al consejo o a los propietarios.",
         ]),
         "requisitos": "\n".join([
-            "Licenciatura en Derecho, Ingeniería Industrial, Sistemas o carrera afín.",
-            "Experiencia de 5 a 8 años en posiciones gerenciales.",
-            "Experiencia gestionando áreas de soporte corporativo o servicios compartidos.",
-            "Liderazgo de equipos multidisciplinarios.",
-            "Deseable experiencia en sector energético o hidrocarburos.",
-            "Visión estratégica y orientación a resultados.",
+            "8 a 10 años en dirección general o corporativa.",
+            "Experiencia liderando múltiples unidades o empresas.",
+            "Visión estratégica y financiera.",
         ]),
-        "prestaciones": "Sueldo bruto mensual de $80-90,000 · Prestaciones superiores a las de ley · Seguro de Vida · Seguro de Gastos Médicos · Fondo de Ahorro · Apoyo mensual de gasolina · Lunes a viernes 8am-6pm · Zona Centro, SLP",
+        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
-        "published_at": "2026-08-17",
+        "published_at": "2026-08-24",
     },
     {
-        "slug": "gerente-financiero-corporativo",
-        "title": "Gerente Financiero Corporativo - Multiunidades",
+        "slug": "ejecutivo-ventas-industrial",
+        "title": "Ejecutivo de Ventas - Industrial",
         "location": "San Luis Potosí",
         "modality": "Presencial",
-        "is_confidential": False,
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$30,000 + comisiones",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Prospectar, asesorar y cerrar ventas de productos o servicios "
+            "industriales con clientes, apoyando las metas comerciales del "
+            "equipo."
+        ),
+        "responsabilidades": "\n".join([
+            "Prospectar y dar seguimiento a clientes potenciales.",
+            "Asesorar al cliente y elaborar cotizaciones.",
+            "Cumplir metas de venta mensuales.",
+            "Registrar la actividad comercial en el CRM.",
+        ]),
+        "requisitos": "\n".join([
+            "1 a 2 años en ventas o atención a clientes.",
+            "Facilidad de palabra y orientación a resultados.",
+            "Manejo básico de CRM/Excel.",
+        ]),
+        "prestaciones": "$30,000 mensuales + comisiones por cumplimiento + prestaciones de ley.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "director-financiero-grupo-corporativo",
+        "title": "Director Financiero - Grupo Corporativo",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
         "company_label": "Confidencial",
         "salary_display": "$120,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Buscamos un Líder experto en la administración y control financiero de "
-            "MULTIUNIDADES, así como experto en diseñar y ejecutar la estrategia "
-            "financiera corporativa del grupo, asegurando solidez financiera, "
-            "cumplimiento fiscal, planeación estratégica, control interno y "
-            "generación de información para la toma de decisiones de alta dirección."
+            "Dirigir la estrategia financiera de un grupo corporativo, "
+            "garantizando rentabilidad, control y cumplimiento."
         ),
         "responsabilidades": "\n".join([
-            "Liderar tesorería, planeación financiera, auditoría interna, contabilidad y estrategia fiscal.",
-            "Supervisar estados financieros, presupuestos, flujo de efectivo, rentabilidad y liquidez de las divisiones del grupo.",
-            "Dirigir procesos de planeación financiera, análisis de inversiones y evaluación de proyectos estratégicos.",
-            "Coordinar cumplimiento fiscal, auditorías internas y externas, control interno y gestión de riesgos.",
-            "Consolidar indicadores financieros y reportes ejecutivos para Dirección General.",
-            "Supervisar presupuestos anuales, proyecciones financieras y seguimiento de KPI's.",
-            "Impulsar eficiencia operativa, economías de escala y mejora de procesos corporativos.",
-            "Liderar equipos financieros multidisciplinarios y relación con bancos, auditores y asesores externos.",
+            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
+            "Analizar rentabilidad por unidad de negocio.",
+            "Gestionar la relación con bancos e inversionistas.",
+            "Asesorar a la dirección en decisiones estratégicas.",
         ]),
         "requisitos": "\n".join([
-            "Licenciatura y deseable Maestría en Finanzas, Administración o Contaduría.",
-            "7 años de experiencia en posiciones financieras de nivel gerencial o corporativo.",
-            "Dominio en finanzas, fiscal, contabilidad, auditoría, presupuestos y análisis financiero.",
-            "Experiencia en evaluación de inversiones, reporteo estratégico y manejo de ERP (SAP deseable).",
-            "Inglés intermedio.",
+            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
+            "Normatividad fiscal mexicana y NIF/IFRS.",
+            "Liderazgo y pensamiento estratégico.",
         ]),
-        "prestaciones": "Sueldo bruto mensual hasta $120,000 · Seguro de Gastos Médicos Mayores (SGMM) · Fondo de Ahorro (FA) · Apoyo de transporte · Horario de lunes a viernes 8:30-18:00 · Zona Centro, SLP",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
         "status": "active",
-        "published_at": "2026-08-13",
+        "published_at": "2026-08-24",
     },
     {
-        "slug": "gerente-mercado-expansion-precios",
-        "title": "Gerente de Mercado - Expansión y Precios",
+        "slug": "coordinador-almacen-salud-insumos-medicos",
+        "title": "Coordinador de Almacén - Salud e Insumos Médicos",
         "location": "San Luis Potosí",
         "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$30,000 - $40,000",
-        "salary_tier": None,
-        "positions": 1,
-        "objetivo": (
-            "Buscamos un líder estratégico que combine visión comercial, "
-            "inteligencia de mercado y capacidad de ejecución para impulsar el "
-            "crecimiento rentable del negocio. Será clave en la expansión de la "
-            "operación y en el desarrollo de estrategias de precios que maximicen "
-            "rentabilidad y competitividad."
-        ),
-        "responsabilidades": "\n".join([
-            "Definir y ejecutar estrategias de expansión, evaluando apertura, formato y ubicación de nuevos puntos de venta.",
-            "Liderar la estrategia de precios para maximizar rentabilidad y competitividad.",
-            "Analizar mercado, competencia, tendencias y comportamiento del consumidor para detectar oportunidades.",
-            "Desarrollar iniciativas comerciales enfocadas en incrementar tráfico, conversión y ticket promedio.",
-            "Trabajar de manera transversal con Operaciones, Finanzas, Compras y Marketing.",
-            "Evaluar el desempeño de unidades y proyectos para asegurar resultados sostenibles.",
-            "Elaborar análisis y recomendaciones para apoyar decisiones estratégicas del negocio.",
-        ]),
-        "requisitos": "\n".join([
-            "Experiencia en posiciones estratégicas de mercado, expansión y precios, preferentemente en empresas de Alimentos y/o Retail.",
-            "Sólida comprensión del negocio retail: formatos, ubicaciones, precios, categorías y rentabilidad.",
-            "Perfil analítico con fuerte orientación a resultados.",
-            "Capacidad para convertir información y datos en decisiones comerciales.",
-            "Liderazgo, negociación y visión de negocio.",
-            "Excel avanzado y manejo de herramientas de análisis y reporteo.",
-        ]),
-        "prestaciones": "$30,000 a $40,000 mensuales + prestaciones superiores a las de ley",
-        "status": "active",
-        "published_at": "2026-08-18",
-    },
-        {
-        "slug": "ejecutivo-pauta-digital-marketing",
-        "title": "Ejecutivo de Pauta Digital - Marketing",
-        "location": "San Luis Potosí",
-        "modality": "Presencial",
-        "is_confidential": False,
+        "is_confidential": True,
         "company_label": "Confidencial",
         "salary_display": "$20,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
-            "Responsable de ejecutar y optimizar la pauta digital del portafolio "
-            "de marcas de un grupo automotriz con presencia en varias ciudades "
-            "de México, convirtiendo estrategias, presupuestos y materiales ya "
-            "definidos en campañas que generen leads al menor costo posible."
+            "Coordinar la recepción, resguardo y despacho de insumos médicos, "
+            "garantizando exactitud de inventario y cumplimiento de rutas de "
+            "entrega."
         ),
         "responsabilidades": "\n".join([
-            "Construir y publicar campañas en Meta Ads, Google Ads y TikTok Ads a partir de los briefs, materiales y presupuestos asignados.",
-            "Operar la pauta de un portafolio de marcas automotrices y sus líneas de negocio.",
-            "Redactar el texto principal de los anuncios y generar variantes para pruebas A/B.",
-            "Ejecutar el flujo de aprobación de campañas: cargar copys, dar seguimiento y liberar.",
-            "Controlar el presupuesto asignado y alertar cualquier desviación.",
-            "Mantener el dashboard de resultados y validar que los leads lleguen completos al CRM.",
+            "Coordinar la recepción, acomodo y resguardo de mercancía en almacén.",
+            "Supervisar la preparación de pedidos y las rutas de entrega.",
+            "Controlar inventarios y reportar diferencias.",
+            "Coordinar al personal de almacén a su cargo.",
         ]),
         "requisitos": "\n".join([
-            "2 a 3 años operando campañas en Meta Ads y Google Ads con cuentas propias (no como apoyo).",
-            "Manejo de Meta Business Manager y Google Ads a nivel ejecución.",
-            "Google Analytics 4 a nivel lectura y validación de conversiones.",
-            "Capacidad de administrar varias cuentas en paralelo sin perder el detalle.",
-            "Deseable: certificaciones de Google Ads y Meta Blueprint, experiencia en generación de leads en sectores de ticket alto (automotriz, inmobiliaria, retail).",
+            "2 a 4 años en almacén o logística, idealmente en salud/farma.",
+            "Manejo de sistemas de inventario (WMS/ERP).",
+            "Liderazgo de equipo pequeño de almacén.",
         ]),
-        "prestaciones": "Sueldo de $20,000 mensuales · Prestaciones de ley · Presupuesto real y marcas consolidadas para operar · Lunes a viernes 9:00-18:00 y sábados hasta medio día · Zona Lomas, SLP",
+        "prestaciones": "$20,000 mensuales + prestaciones de ley + vales de despensa según cliente.",
         "status": "active",
-        "published_at": "2026-08-12",
-    },
-        {
-        "slug": "coordinador-comercial-club-deportivo",
-        "title": "Coordinador Comercial - Club Deportivo",
-        "location": "Soledad de Graciano Sánchez",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$16,000 + comisiones",
-        "salary_tier": None,
-        "positions": 1,
-        "objetivo": (
-            "Liderar la estrategia comercial del Club para incrementar la "
-            "captación, conversión y retención de membresías, desarrollando un "
-            "equipo comercial de alto desempeño y asegurando un crecimiento "
-            "sostenible de los ingresos."
-        ),
-        "responsabilidades": "\n".join([
-            "Diseñar y administrar el funnel comercial.",
-            "Gestionar la captación de prospectos y el cierre de membresías.",
-            "Desarrollar alianzas estratégicas y membresías corporativas.",
-            "Identificar oportunidades de crecimiento y mejora comercial.",
-            "Liderar, capacitar y desarrollar al equipo de ventas.",
-            "Dar seguimiento a indicadores comerciales (KPIs) y al CRM.",
-            "Elaborar reportes comerciales y proponer estrategias para mejorar resultados.",
-            "Implementar estrategias de fidelización y satisfacción de los miembros.",
-            "Coordinar acciones para reducir la cancelación de membresías y fortalecer la experiencia del cliente.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Administración, Mercadotecnia, Negocios o carrera afín.",
-            "Más de 5 años de experiencia en ventas de servicios B2C.",
-            "Experiencia liderando equipos comerciales.",
-            "Manejo de CRM, indicadores comerciales y herramientas digitales.",
-            "Deseable experiencia en clubes deportivos, fitness, hospitalidad o empresas de servicios.",
-        ]),
-        "prestaciones": "Sueldo de $16,000 libres mensuales + comisiones · Bonos por cumplimiento de KPIs · Prestaciones de ley (IMSS, INFONAVIT, aguinaldo, vacaciones, prima vacacional) · Horario 9:00-14:00 y 16:00-19:00 lunes a viernes, sábados medio día",
-        "status": "active",
-        "published_at": "2026-08-13",
+        "published_at": "2026-08-24",
     },
     {
-        "slug": "lider-capital-humano-club-deportivo",
-        "title": "Líder de Capital Humano - Club Deportivo",
-        "location": "Soledad de Graciano Sánchez",
-        "modality": "Presencial",
-        "is_confidential": False,
-        "company_label": "Confidencial",
-        "salary_display": "$16,000",
-        "salary_tier": None,
-        "positions": 1,
-        "objetivo": (
-            "Diseñar, implementar y consolidar la estrategia integral de Talento "
-            "y Cultura del Club, combinando la operación de Recursos Humanos con "
-            "el desarrollo organizacional para atraer, desarrollar y retener al "
-            "mejor talento, y fortalecer una cultura de alto desempeño, "
-            "bienestar y servicio."
-        ),
-        "responsabilidades": "\n".join([
-            "Gestionar el ciclo completo de reclutamiento y selección.",
-            "Coordinar altas, bajas, expedientes, capacitación e incidencias de nómina.",
-            "Administrar descripciones de puesto, headcount y planeación de personal.",
-            "Garantizar el cumplimiento de la legislación laboral y procesos administrativos.",
-            "Coordinar inducción, convenios universitarios y programas de practicantes.",
-            "Implementar programas de coaching y desarrollo para líderes, y diseñar planes de desarrollo individual.",
-            "Medir y mejorar el clima organizacional; crear programas de reconocimiento, integración y bienestar.",
-            "Automatizar procesos de Recursos Humanos mediante herramientas digitales e inteligencia artificial.",
-            "Crear una bolsa permanente de talento e implementar indicadores y procesos escalables para el crecimiento del Club.",
-        ]),
-        "requisitos": "\n".join([
-            "Licenciatura en Psicología, Recursos Humanos, Administración o carrera afín.",
-            "Mínimo 4 años de experiencia liderando Recursos Humanos de forma integral.",
-            "Experiencia en coaching, desarrollo organizacional o gestión del desempeño.",
-            "Conocimiento sólido de legislación laboral mexicana.",
-            "Experiencia diseñando e implementando procesos desde cero.",
-            "Deseable experiencia en clubes deportivos, hospitalidad, retail o empresas de servicio, y familiaridad con herramientas de IA y automatización.",
-        ]),
-        "prestaciones": "Sueldo $16,000 libres mensuales · Bonos por cumplimiento de KPIs · Prestaciones de ley (IMSS, INFONAVIT, aguinaldo, vacaciones, prima vacacional) · Horario lunes a viernes 9:00-14:00 y 16:00-19:00, sábados medio día",
-        "status": "active",
-        "published_at": "2026-08-16",
-    },
-    {
-        "slug": "lider-distribucion-operaciones-hidrocarburos",
-        "title": "Líder de Distribución y Operaciones - Hidrocarburos",
+        "slug": "director-operaciones-industriales-manufactura",
+        "title": "Director de Operaciones Industriales - Manufactura",
         "location": "San Luis Potosí",
         "modality": "Presencial",
-        "is_confidential": False,
+        "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$35,000 - $45,000",
+        "salary_display": "$130,000",
+        "salary_tier": "gold",
+        "positions": 1,
+        "objetivo": (
+            "Dirigir la operación industrial completa (producción, "
+            "mantenimiento y calidad), maximizando eficiencia, seguridad y "
+            "rentabilidad de la planta."
+        ),
+        "responsabilidades": "\n".join([
+            "Dirigir las áreas de producción, mantenimiento, calidad y seguridad.",
+            "Definir metas de productividad, costos y eficiencia operativa.",
+            "Supervisar el cumplimiento normativo (seguridad industrial, ambiental, STPS).",
+            "Liderar a los gerentes de planta y equipos de mejora continua.",
+        ]),
+        "requisitos": "\n".join([
+            "8 a 10 años en dirección de operaciones industriales.",
+            "Experiencia en manufactura, producción o procesos industriales.",
+            "Liderazgo de plantas o múltiples líneas de producción.",
+        ]),
+        "prestaciones": "$130,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "auxiliar-administrativo-contable",
+        "title": "Auxiliar Administrativo / Contable",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$20,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
-            "Buscamos un(a) Líder de Distribución y operaciones con experiencia en "
-            "logística y control de volumetría dentro de los sectores de "
-            "combustibles, gas o industrias afines. Será responsable de coordinar "
-            "la operación de distribución, almacenamiento y flota de reparto, "
-            "asegurando un óptimo control de inventarios, la trazabilidad del "
-            "producto, el cumplimiento operativo y normativo, así como la "
-            "eficiencia de los procesos."
+            "Apoyar las actividades administrativas y/o contables diarias, "
+            "garantizando orden y seguimiento de la información."
         ),
         "responsabilidades": "\n".join([
-            "Estandarizar procesos y optimizar el control de inventarios.",
-            "Administrar el almacenamiento y la flota de reparto.",
-            "Fortalecer los servicios de autoconsumo mediante una atención de alto nivel y relaciones comerciales de largo plazo.",
-            "Implementar controles e indicadores que permitan consolidar una operación eficiente, ordenada y escalable.",
+            "Apoyar en captura y registro administrativo/contable.",
+            "Archivar y dar seguimiento a documentación.",
+            "Apoyar en facturación, pagos o cobranza.",
+            "Atender trámites de personal y proveedores.",
         ]),
         "requisitos": "\n".join([
-            "Ingeniería Industrial, Mecánica, Logística o carrera afín.",
-            "Experiencia en operaciones, logística o distribución de combustibles, gas o productos de manejo volumétrico.",
-            "Conocimientos en control de volumetría, inventarios, almacenamiento y administración de flotas.",
-            "Experiencia en implementación y seguimiento de procesos, controles e indicadores de desempeño.",
-            "Capacidad para coordinar equipos de trabajo y asegurar el cumplimiento de objetivos operativos.",
-            "Perfil organizado, analítico, con alta capacidad de resolución de problemas y orientación a resultados.",
+            "1 a 2 años en puestos administrativos o contables.",
+            "Manejo de Office (Excel básico-intermedio).",
+            "Organización y actitud de servicio.",
         ]),
-        "prestaciones": "Sueldo de $35,000 a $45,000 pesos brutos mensuales, de acuerdo con experiencia · Prestaciones superiores a las de ley · Lunes a viernes de 8:00 a.m. a 5:00 p.m.",
+        "prestaciones": "$20,000 mensuales + prestaciones de ley + vales de despensa según cliente.",
         "status": "active",
-        "published_at": "2026-08-16",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "director-comercial-automotriz",
+        "title": "Director Comercial - Automotriz",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$100,000 + bonos",
+        "salary_tier": "gold",
+        "positions": 1,
+        "objetivo": (
+            "Liderar la estrategia comercial y el equipo de ventas para "
+            "impulsar el crecimiento rentable del negocio."
+        ),
+        "responsabilidades": "\n".join([
+            "Diseñar el plan comercial y las metas de venta.",
+            "Liderar y desarrollar al equipo comercial.",
+            "Negociar cuentas y clientes estratégicos.",
+            "Analizar mercado y competencia.",
+        ]),
+        "requisitos": "\n".join([
+            "5 a 8 años en puestos comerciales, liderando equipos.",
+            "Negociación y orientación a resultados.",
+            "Excel avanzado y CRM.",
+        ]),
+        "prestaciones": "$100,000 mensuales + bonos por resultados + prestaciones superiores a la ley + auto o gasolina.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "asesor-comercial-concesionarias-automotrices",
+        "title": "Asesor Comercial - Concesionarias Automotrices",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "Sueldo base + comisiones",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Atender y asesorar a clientes de la concesionaria, impulsando "
+            "ventas de unidades, refacciones o servicio."
+        ),
+        "responsabilidades": "\n".join([
+            "Atender y asesorar a clientes en piso o showroom.",
+            "Cumplir metas de venta de unidades y servicios.",
+            "Elaborar cotizaciones y dar seguimiento al cierre.",
+            "Dar seguimiento postventa al cliente.",
+        ]),
+        "requisitos": "\n".join([
+            "1 a 3 años en ventas o servicio automotriz.",
+            "Facilidad de palabra y actitud de servicio.",
+            "Manejo de CRM o control de piso de ventas.",
+        ]),
+        "prestaciones": "Sueldo base + comisiones por cumplimiento + prestaciones de ley.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "gerente-capital-humano",
+        "title": "Gerente de Capital Humano",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$32,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Diseñar y ejecutar la estrategia de capital humano, garantizando "
+            "atracción, desarrollo y retención de talento."
+        ),
+        "responsabilidades": "\n".join([
+            "Liderar reclutamiento, nómina y relaciones laborales.",
+            "Diseñar políticas y programas de desarrollo.",
+            "Dar seguimiento a clima laboral y rotación.",
+            "Garantizar cumplimiento de la Ley Federal del Trabajo.",
+        ]),
+        "requisitos": "\n".join([
+            "4 a 6 años en Capital Humano, como gerente o líder.",
+            "Conocimiento de nómina y normatividad laboral.",
+            "Negociación y manejo de conflictos.",
+        ]),
+        "prestaciones": "$32,000 mensuales + prestaciones superiores a la ley + fondo de ahorro.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "residente-obra-construccion-infraestructura",
+        "title": "Residente de Obra - Construcción e Infraestructura",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$25,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Supervisar la ejecución de obra, garantizando tiempos, "
+            "presupuesto, calidad y seguridad."
+        ),
+        "responsabilidades": "\n".join([
+            "Supervisar el avance físico y financiero de la obra.",
+            "Coordinar cuadrillas, contratistas y materiales.",
+            "Garantizar normativa de construcción y seguridad.",
+            "Elaborar reportes y estimaciones de avance.",
+        ]),
+        "requisitos": "\n".join([
+            "3 a 5 años como residente de obra.",
+            "Manejo de AutoCAD y MS Project.",
+            "Disponibilidad para foráneo según proyecto.",
+        ]),
+        "prestaciones": "$25,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "gerente-compras-industrial",
+        "title": "Gerente de Compras - Industrial",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$40,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Administrar el abastecimiento de la empresa, garantizando costo, "
+            "calidad y tiempo de entrega óptimos."
+        ),
+        "responsabilidades": "\n".join([
+            "Negociar condiciones comerciales con proveedores.",
+            "Elaborar y dar seguimiento al plan de compras.",
+            "Controlar presupuesto y costo de adquisición.",
+            "Coordinar con Almacén los niveles de inventario.",
+        ]),
+        "requisitos": "\n".join([
+            "3 a 5 años en compras o abastecimiento.",
+            "Negociación y análisis de costos.",
+            "Excel avanzado y sistemas de compras/ERP.",
+        ]),
+        "prestaciones": "$40,000 mensuales + prestaciones superiores a la ley + vales de despensa.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "gerente-mantenimiento-flotillas-transporte",
+        "title": "Gerente de Mantenimiento y Flotillas - Transporte",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$38,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Administrar el mantenimiento y la disponibilidad de la flotilla, "
+            "garantizando seguridad vehicular y cumplimiento normativo de "
+            "transporte."
+        ),
+        "responsabilidades": "\n".join([
+            "Supervisar el taller de mantenimiento y la disponibilidad de unidades.",
+            "Coordinar programas de mantenimiento preventivo y correctivo.",
+            "Garantizar seguridad vehicular y normativa de transporte.",
+            "Controlar costos de refacciones, combustible y mantenimiento.",
+        ]),
+        "requisitos": "\n".join([
+            "3 a 5 años en mantenimiento de flotillas o talleres de transporte.",
+            "Manejo de indicadores de disponibilidad y costos de flotilla.",
+            "Liderazgo de personal técnico y de taller.",
+        ]),
+        "prestaciones": "$38,000 mensuales + prestaciones superiores a la ley + fondo de ahorro.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "contador-general-contralor",
+        "title": "Contador General / Contralor",
+        "location": "San Luis Potosí",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$35,000",
+        "salary_tier": None,
+        "positions": 1,
+        "objetivo": (
+            "Garantizar el registro contable y cumplimiento fiscal de la "
+            "empresa, con información financiera confiable y oportuna."
+        ),
+        "responsabilidades": "\n".join([
+            "Elaborar estados financieros y cierres contables.",
+            "Garantizar cumplimiento fiscal (ISR, IVA, declaraciones).",
+            "Supervisar auxiliares contables y facturación.",
+            "Atender auditorías internas/externas y del SAT.",
+        ]),
+        "requisitos": "\n".join([
+            "3 a 5 años en contabilidad general.",
+            "Normatividad fiscal mexicana vigente.",
+            "CONTPAQi/Aspel/SAP y Excel avanzado.",
+        ]),
+        "prestaciones": "$35,000 mensuales + prestaciones superiores a la ley + vales de despensa.",
+        "status": "active",
+        "published_at": "2026-08-24",
     },
 ]
 
