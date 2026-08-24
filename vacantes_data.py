@@ -21,7 +21,7 @@ VACANCIES = [
     {
         "slug": "director-general-grupo-corporativo",
         "title": "Director General - Grupo Corporativo",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -50,7 +50,7 @@ VACANCIES = [
     {
         "slug": "ejecutivo-ventas-industrial",
         "title": "Ejecutivo de Ventas - Industrial",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -80,7 +80,7 @@ VACANCIES = [
     {
         "slug": "director-financiero-grupo-corporativo",
         "title": "Director Financiero - Grupo Corporativo",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -109,7 +109,7 @@ VACANCIES = [
     {
         "slug": "coordinador-almacen-salud-insumos-medicos",
         "title": "Coordinador de Almacén - Salud e Insumos Médicos",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -139,7 +139,7 @@ VACANCIES = [
     {
         "slug": "director-operaciones-industriales-manufactura",
         "title": "Director de Operaciones Industriales - Manufactura",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -169,7 +169,7 @@ VACANCIES = [
     {
         "slug": "auxiliar-administrativo-contable",
         "title": "Auxiliar Administrativo / Contable",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -198,7 +198,7 @@ VACANCIES = [
     {
         "slug": "director-comercial-automotriz",
         "title": "Director Comercial - Automotriz",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -227,7 +227,7 @@ VACANCIES = [
     {
         "slug": "asesor-comercial-concesionarias-automotrices",
         "title": "Asesor Comercial - Concesionarias Automotrices",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -256,7 +256,7 @@ VACANCIES = [
     {
         "slug": "gerente-capital-humano",
         "title": "Gerente de Capital Humano",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -285,7 +285,7 @@ VACANCIES = [
     {
         "slug": "residente-obra-construccion-infraestructura",
         "title": "Residente de Obra - Construcción e Infraestructura",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -314,7 +314,7 @@ VACANCIES = [
     {
         "slug": "gerente-compras-industrial",
         "title": "Gerente de Compras - Industrial",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -343,7 +343,7 @@ VACANCIES = [
     {
         "slug": "gerente-mantenimiento-flotillas-transporte",
         "title": "Gerente de Mantenimiento y Flotillas - Transporte",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
@@ -373,7 +373,7 @@ VACANCIES = [
     {
         "slug": "contador-general-contralor",
         "title": "Contador General / Contralor",
-        "location": "San Luis Potosí",
+        "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
