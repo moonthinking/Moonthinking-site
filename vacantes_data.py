@@ -138,7 +138,7 @@ VACANCIES = [
     },
     {
         "slug": "director-operaciones-industriales-manufactura",
-        "title": "Director de Operaciones Industriales - Manufactura",
+        "title": "Gerente de Producción - Manufactura",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
