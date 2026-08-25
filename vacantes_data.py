@@ -138,12 +138,12 @@ VACANCIES = [
     },
     {
         "slug": "director-operaciones-industriales-manufactura",
-        "title": "Gerente de Producción - Manufactura",
+        "title": "Gerente de Producción - Acería",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$130,000",
+        "salary_display": "$120,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
@@ -159,10 +159,10 @@ VACANCIES = [
         ]),
         "requisitos": "\n".join([
             "8 a 10 años en dirección de operaciones industriales.",
-            "Experiencia en manufactura, producción o procesos industriales.",
+            "Experiencia en acería, producción o procesos industriales.",
             "Liderazgo de plantas o múltiples líneas de producción.",
         ]),
-        "prestaciones": "$130,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
