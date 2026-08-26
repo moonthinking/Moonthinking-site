@@ -25,7 +25,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$160,000",
+        "salary_display": "$150,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
