@@ -78,31 +78,32 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-financiero-grupo-corporativo",
-        "title": "Director Financiero - Grupo Corporativo",
+        "slug": "director-operaciones-industriales-manufactura",
+        "title": "Gerente de Producción - Acería",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$120,000",
+        "salary_display": "$100,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Dirigir la estrategia financiera de un grupo corporativo, "
-            "garantizando rentabilidad, control y cumplimiento."
+            "Dirigir la operación industrial completa (producción, "
+            "mantenimiento y calidad), maximizando eficiencia, seguridad y "
+            "rentabilidad de la planta."
         ),
         "responsabilidades": "\n".join([
-            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
-            "Analizar rentabilidad por unidad de negocio.",
-            "Gestionar la relación con bancos e inversionistas.",
-            "Asesorar a la dirección en decisiones estratégicas.",
+            "Dirigir las áreas de producción, mantenimiento, calidad y seguridad.",
+            "Definir metas de productividad, costos y eficiencia operativa.",
+            "Supervisar el cumplimiento normativo (seguridad industrial, ambiental, STPS).",
+            "Liderar a los gerentes de planta y equipos de mejora continua.",
         ]),
         "requisitos": "\n".join([
-            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
-            "Normatividad fiscal mexicana y NIF/IFRS.",
-            "Liderazgo y pensamiento estratégico.",
+            "8 a 10 años en dirección de operaciones industriales.",
+            "Experiencia en acería, producción o procesos industriales.",
+            "Liderazgo de plantas o múltiples líneas de producción.",
         ]),
-        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -137,8 +138,8 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-operaciones-industriales-manufactura",
-        "title": "Gerente de Producción - Acería",
+        "slug": "director-financiero-grupo-corporativo",
+        "title": "Director Financiero - Grupo Corporativo",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
@@ -147,22 +148,21 @@ VACANCIES = [
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Dirigir la operación industrial completa (producción, "
-            "mantenimiento y calidad), maximizando eficiencia, seguridad y "
-            "rentabilidad de la planta."
+            "Dirigir la estrategia financiera de un grupo corporativo, "
+            "garantizando rentabilidad, control y cumplimiento."
         ),
         "responsabilidades": "\n".join([
-            "Dirigir las áreas de producción, mantenimiento, calidad y seguridad.",
-            "Definir metas de productividad, costos y eficiencia operativa.",
-            "Supervisar el cumplimiento normativo (seguridad industrial, ambiental, STPS).",
-            "Liderar a los gerentes de planta y equipos de mejora continua.",
+            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
+            "Analizar rentabilidad por unidad de negocio.",
+            "Gestionar la relación con bancos e inversionistas.",
+            "Asesorar a la dirección en decisiones estratégicas.",
         ]),
         "requisitos": "\n".join([
-            "8 a 10 años en dirección de operaciones industriales.",
-            "Experiencia en acería, producción o procesos industriales.",
-            "Liderazgo de plantas o múltiples líneas de producción.",
+            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
+            "Normatividad fiscal mexicana y NIF/IFRS.",
+            "Liderazgo y pensamiento estratégico.",
         ]),
-        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -173,7 +173,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$20,000",
+        "salary_display": "$18,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -226,7 +226,7 @@ VACANCIES = [
     },
     {
         "slug": "asesor-comercial-concesionarias-automotrices",
-        "title": "Asesor Comercial - Concesionarias Automotrices",
+        "title": "Asesor Comercial - Automotriz",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
@@ -284,12 +284,12 @@ VACANCIES = [
     },
     {
         "slug": "residente-obra-construccion-infraestructura",
-        "title": "Residente de Obra - Construcción e Infraestructura",
+        "title": "Residente de Obra - Construcción",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$25,000",
+        "salary_display": "$30,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -318,7 +318,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$40,000",
+        "salary_display": "$50,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -347,7 +347,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$38,000",
+        "salary_display": "$45,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
