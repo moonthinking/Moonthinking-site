@@ -25,7 +25,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$120,000",
+        "salary_display": "$160,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
@@ -144,8 +144,8 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$100,000 + bonos",
-        "salary_tier": "gold",
+        "salary_display": "$85,000 + bonos",
+        "salary_tier": "blue",
         "positions": 1,
         "objetivo": (
             "Liderar la estrategia comercial y el equipo de ventas para "
@@ -196,31 +196,31 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-general-grupo-corporativo",
-        "title": "Director General - Grupo Corporativo",
+        "slug": "residente-obra-construccion-infraestructura",
+        "title": "Residente de Obra - Construcción",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$150,000",
-        "salary_tier": "gold",
+        "salary_display": "$30,000",
+        "salary_tier": None,
         "positions": 1,
         "objetivo": (
-            "Dirigir la operación y estrategia de un grupo con varias unidades "
-            "de negocio, garantizando resultados y gobernanza corporativa."
+            "Supervisar la ejecución de obra, garantizando tiempos, "
+            "presupuesto, calidad y seguridad."
         ),
         "responsabilidades": "\n".join([
-            "Definir la estrategia y objetivos del grupo.",
-            "Supervisar a los directores de cada unidad de negocio.",
-            "Aprobar presupuestos, inversiones y expansión.",
-            "Reportar resultados al consejo o a los propietarios.",
+            "Supervisar el avance físico y financiero de la obra.",
+            "Coordinar cuadrillas, contratistas y materiales.",
+            "Garantizar normativa de construcción y seguridad.",
+            "Elaborar reportes y estimaciones de avance.",
         ]),
         "requisitos": "\n".join([
-            "8 a 10 años en dirección general o corporativa.",
-            "Experiencia liderando múltiples unidades o empresas.",
-            "Visión estratégica y financiera.",
+            "3 a 5 años como residente de obra.",
+            "Manejo de AutoCAD y MS Project.",
+            "Disponibilidad para foráneo según proyecto.",
         ]),
-        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "prestaciones": "$25,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -283,31 +283,31 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "residente-obra-construccion-infraestructura",
-        "title": "Residente de Obra - Construcción",
+        "slug": "director-general-grupo-corporativo",
+        "title": "Director General - Grupo Corporativo",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$30,000",
-        "salary_tier": None,
+        "salary_display": "$250,000",
+        "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Supervisar la ejecución de obra, garantizando tiempos, "
-            "presupuesto, calidad y seguridad."
+            "Dirigir la operación y estrategia de un grupo con varias unidades "
+            "de negocio, garantizando resultados y gobernanza corporativa."
         ),
         "responsabilidades": "\n".join([
-            "Supervisar el avance físico y financiero de la obra.",
-            "Coordinar cuadrillas, contratistas y materiales.",
-            "Garantizar normativa de construcción y seguridad.",
-            "Elaborar reportes y estimaciones de avance.",
+            "Definir la estrategia y objetivos del grupo.",
+            "Supervisar a los directores de cada unidad de negocio.",
+            "Aprobar presupuestos, inversiones y expansión.",
+            "Reportar resultados al consejo o a los propietarios.",
         ]),
         "requisitos": "\n".join([
-            "3 a 5 años como residente de obra.",
-            "Manejo de AutoCAD y MS Project.",
-            "Disponibilidad para foráneo según proyecto.",
+            "8 a 10 años en dirección general o corporativa.",
+            "Experiencia liderando múltiples unidades o empresas.",
+            "Visión estratégica y financiera.",
         ]),
-        "prestaciones": "$25,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
+        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
