@@ -19,31 +19,31 @@ siguiente deploy.
 
 VACANCIES = [
     {
-        "slug": "director-general-grupo-corporativo",
-        "title": "Director General - Grupo Corporativo",
+        "slug": "director-financiero-grupo-corporativo",
+        "title": "Director Financiero - Grupo Corporativo",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$150,000",
+        "salary_display": "$120,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Dirigir la operación y estrategia de un grupo con varias unidades "
-            "de negocio, garantizando resultados y gobernanza corporativa."
+            "Dirigir la estrategia financiera de un grupo corporativo, "
+            "garantizando rentabilidad, control y cumplimiento."
         ),
         "responsabilidades": "\n".join([
-            "Definir la estrategia y objetivos del grupo.",
-            "Supervisar a los directores de cada unidad de negocio.",
-            "Aprobar presupuestos, inversiones y expansión.",
-            "Reportar resultados al consejo o a los propietarios.",
+            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
+            "Analizar rentabilidad por unidad de negocio.",
+            "Gestionar la relación con bancos e inversionistas.",
+            "Asesorar a la dirección en decisiones estratégicas.",
         ]),
         "requisitos": "\n".join([
-            "8 a 10 años en dirección general o corporativa.",
-            "Experiencia liderando múltiples unidades o empresas.",
-            "Visión estratégica y financiera.",
+            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
+            "Normatividad fiscal mexicana y NIF/IFRS.",
+            "Liderazgo y pensamiento estratégico.",
         ]),
-        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -138,31 +138,31 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-financiero-grupo-corporativo",
-        "title": "Director Financiero - Grupo Corporativo",
+        "slug": "director-comercial-automotriz",
+        "title": "Director Comercial - Automotriz",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$120,000",
+        "salary_display": "$100,000 + bonos",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Dirigir la estrategia financiera de un grupo corporativo, "
-            "garantizando rentabilidad, control y cumplimiento."
+            "Liderar la estrategia comercial y el equipo de ventas para "
+            "impulsar el crecimiento rentable del negocio."
         ),
         "responsabilidades": "\n".join([
-            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
-            "Analizar rentabilidad por unidad de negocio.",
-            "Gestionar la relación con bancos e inversionistas.",
-            "Asesorar a la dirección en decisiones estratégicas.",
+            "Diseñar el plan comercial y las metas de venta.",
+            "Liderar y desarrollar al equipo comercial.",
+            "Negociar cuentas y clientes estratégicos.",
+            "Analizar mercado y competencia.",
         ]),
         "requisitos": "\n".join([
-            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
-            "Normatividad fiscal mexicana y NIF/IFRS.",
-            "Liderazgo y pensamiento estratégico.",
+            "5 a 8 años en puestos comerciales, liderando equipos.",
+            "Negociación y orientación a resultados.",
+            "Excel avanzado y CRM.",
         ]),
-        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
+        "prestaciones": "$100,000 mensuales + bonos por resultados + prestaciones superiores a la ley + auto o gasolina.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -196,31 +196,31 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-comercial-automotriz",
-        "title": "Director Comercial - Automotriz",
+        "slug": "director-general-grupo-corporativo",
+        "title": "Director General - Grupo Corporativo",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$100,000 + bonos",
+        "salary_display": "$150,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Liderar la estrategia comercial y el equipo de ventas para "
-            "impulsar el crecimiento rentable del negocio."
+            "Dirigir la operación y estrategia de un grupo con varias unidades "
+            "de negocio, garantizando resultados y gobernanza corporativa."
         ),
         "responsabilidades": "\n".join([
-            "Diseñar el plan comercial y las metas de venta.",
-            "Liderar y desarrollar al equipo comercial.",
-            "Negociar cuentas y clientes estratégicos.",
-            "Analizar mercado y competencia.",
+            "Definir la estrategia y objetivos del grupo.",
+            "Supervisar a los directores de cada unidad de negocio.",
+            "Aprobar presupuestos, inversiones y expansión.",
+            "Reportar resultados al consejo o a los propietarios.",
         ]),
         "requisitos": "\n".join([
-            "5 a 8 años en puestos comerciales, liderando equipos.",
-            "Negociación y orientación a resultados.",
-            "Excel avanzado y CRM.",
+            "8 a 10 años en dirección general o corporativa.",
+            "Experiencia liderando múltiples unidades o empresas.",
+            "Visión estratégica y financiera.",
         ]),
-        "prestaciones": "$100,000 mensuales + bonos por resultados + prestaciones superiores a la ley + auto o gasolina.",
+        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
