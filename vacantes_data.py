@@ -15,38 +15,14 @@ panel de admin.
 Para actualizar esta lista hay que editar este archivo directamente en
 GitHub (o en el codigo) y hacer commit a main; Render la tomara en el
 siguiente deploy.
+
+IMPORTANTE: el orden de esta lista es el orden en el que se muestran las
+vacantes en /vacantes (la vista usa sort=recent por default, y como los
+13 perfiles comparten la misma fecha `published_at`, el orden final es
+el orden de esta lista, gracias a que Python usa sort estable).
 """
 
 VACANCIES = [
-    {
-        "slug": "director-general-grupo-corporativo",
-        "title": "Director General - Grupo Corporativo",
-        "location": "México",
-        "modality": "Presencial",
-        "is_confidential": True,
-        "company_label": "Confidencial",
-        "salary_display": "$150,000",
-        "salary_tier": "gold",
-        "positions": 1,
-        "objetivo": (
-            "Dirigir la operación y estrategia de un grupo con varias unidades "
-            "de negocio, garantizando resultados y gobernanza corporativa."
-        ),
-        "responsabilidades": "\n".join([
-            "Definir la estrategia y objetivos del grupo.",
-            "Supervisar a los directores de cada unidad de negocio.",
-            "Aprobar presupuestos, inversiones y expansión.",
-            "Reportar resultados al consejo o a los propietarios.",
-        ]),
-        "requisitos": "\n".join([
-            "8 a 10 años en dirección general o corporativa.",
-            "Experiencia liderando múltiples unidades o empresas.",
-            "Visión estratégica y financiera.",
-        ]),
-        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
-        "status": "active",
-        "published_at": "2026-08-24",
-    },
     {
         "slug": "ejecutivo-ventas-industrial",
         "title": "Ejecutivo de Ventas - Industrial",
@@ -84,7 +60,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$120,000",
+        "salary_display": "$160,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
@@ -102,7 +78,7 @@ VACANCIES = [
             "Normatividad fiscal mexicana y NIF/IFRS.",
             "Liderazgo y pensamiento estratégico.",
         ]),
-        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
+        "prestaciones": "$160,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -173,7 +149,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$20,000",
+        "salary_display": "$18,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -191,7 +167,7 @@ VACANCIES = [
             "Manejo de Office (Excel básico-intermedio).",
             "Organización y actitud de servicio.",
         ]),
-        "prestaciones": "$20,000 mensuales + prestaciones de ley + vales de despensa según cliente.",
+        "prestaciones": "$18,000 mensuales + prestaciones de ley + vales de despensa según cliente.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -226,7 +202,7 @@ VACANCIES = [
     },
     {
         "slug": "asesor-comercial-concesionarias-automotrices",
-        "title": "Asesor Comercial - Concesionarias Automotrices",
+        "title": "Asesor Comercial - Automotriz",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
@@ -284,12 +260,12 @@ VACANCIES = [
     },
     {
         "slug": "residente-obra-construccion-infraestructura",
-        "title": "Residente de Obra - Construcción e Infraestructura",
+        "title": "Residente de Obra - Construcción",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$25,000",
+        "salary_display": "$30,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -307,7 +283,36 @@ VACANCIES = [
             "Manejo de AutoCAD y MS Project.",
             "Disponibilidad para foráneo según proyecto.",
         ]),
-        "prestaciones": "$25,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
+        "prestaciones": "$30,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
+        "status": "active",
+        "published_at": "2026-08-24",
+    },
+    {
+        "slug": "director-general-grupo-corporativo",
+        "title": "Director General - Grupo Corporativo",
+        "location": "México",
+        "modality": "Presencial",
+        "is_confidential": True,
+        "company_label": "Confidencial",
+        "salary_display": "$250,000",
+        "salary_tier": "gold",
+        "positions": 1,
+        "objetivo": (
+            "Dirigir la operación y estrategia de un grupo con varias unidades "
+            "de negocio, garantizando resultados y gobernanza corporativa."
+        ),
+        "responsabilidades": "\n".join([
+            "Definir la estrategia y objetivos del grupo.",
+            "Supervisar a los directores de cada unidad de negocio.",
+            "Aprobar presupuestos, inversiones y expansión.",
+            "Reportar resultados al consejo o a los propietarios.",
+        ]),
+        "requisitos": "\n".join([
+            "8 a 10 años en dirección general o corporativa.",
+            "Experiencia liderando múltiples unidades o empresas.",
+            "Visión estratégica y financiera.",
+        ]),
+        "prestaciones": "$250,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -318,7 +323,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$40,000",
+        "salary_display": "$50,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -336,7 +341,7 @@ VACANCIES = [
             "Negociación y análisis de costos.",
             "Excel avanzado y sistemas de compras/ERP.",
         ]),
-        "prestaciones": "$40,000 mensuales + prestaciones superiores a la ley + vales de despensa.",
+        "prestaciones": "$50,000 mensuales + prestaciones superiores a la ley + vales de despensa.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -347,7 +352,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$38,000",
+        "salary_display": "$50,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -366,7 +371,7 @@ VACANCIES = [
             "Manejo de indicadores de disponibilidad y costos de flotilla.",
             "Liderazgo de personal técnico y de taller.",
         ]),
-        "prestaciones": "$38,000 mensuales + prestaciones superiores a la ley + fondo de ahorro.",
+        "prestaciones": "$50,000 mensuales + prestaciones superiores a la ley + fondo de ahorro.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -377,7 +382,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$35,000",
+        "salary_display": "$40,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -395,7 +400,7 @@ VACANCIES = [
             "Normatividad fiscal mexicana vigente.",
             "CONTPAQi/Aspel/SAP y Excel avanzado.",
         ]),
-        "prestaciones": "$35,000 mensuales + prestaciones superiores a la ley + vales de despensa.",
+        "prestaciones": "$40,000 mensuales + prestaciones superiores a la ley + vales de despensa.",
         "status": "active",
         "published_at": "2026-08-24",
     },

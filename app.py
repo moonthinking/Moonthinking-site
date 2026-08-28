@@ -81,10 +81,14 @@ def _salary_value(salary_display):
 @app.route("/")
 def inicio():
     active_vacancies = [vacancy_to_view(v) for v in vacantes_data.get_all() if v.get("status") == "active"]
-    # "Vacantes destacadas": siempre las 3 vacantes activas mejor pagadas.
-    featured_vacancies = sorted(
-        active_vacancies, key=lambda v: _salary_value(v.get("salary_display")), reverse=True
-    )[:3]
+    # "Vacantes destacadas": lista fija elegida a mano (no automática por sueldo).
+    featured_slugs = [
+        "director-operaciones-industriales-manufactura",  # Gerente de Producción - Acería
+        "director-financiero-grupo-corporativo",           # Director Financiero - Grupo Corporativo
+        "director-comercial-automotriz",                   # Director Comercial - Automotriz
+    ]
+    by_slug = {v.get("slug"): v for v in active_vacancies}
+    featured_vacancies = [by_slug[s] for s in featured_slugs if s in by_slug]
     # "Blog": los 3 artículos fijos (vienen de blog_data.py, no de la base de datos).
     latest_posts = blog_data.get_all()
     return render_template("inicio.html", featured_vacancies=featured_vacancies, latest_posts=latest_posts)
