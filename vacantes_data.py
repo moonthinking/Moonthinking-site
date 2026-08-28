@@ -19,8 +19,8 @@ siguiente deploy.
 
 VACANCIES = [
     {
-        "slug": "director-financiero-grupo-corporativo",
-        "title": "Director Financiero - Grupo Corporativo",
+        "slug": "director-general-grupo-corporativo",
+        "title": "Director General - Grupo Corporativo",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
@@ -29,21 +29,21 @@ VACANCIES = [
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Dirigir la estrategia financiera de un grupo corporativo, "
-            "garantizando rentabilidad, control y cumplimiento."
+            "Dirigir la operación y estrategia de un grupo con varias unidades "
+            "de negocio, garantizando resultados y gobernanza corporativa."
         ),
         "responsabilidades": "\n".join([
-            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
-            "Analizar rentabilidad por unidad de negocio.",
-            "Gestionar la relación con bancos e inversionistas.",
-            "Asesorar a la dirección en decisiones estratégicas.",
+            "Definir la estrategia y objetivos del grupo.",
+            "Supervisar a los directores de cada unidad de negocio.",
+            "Aprobar presupuestos, inversiones y expansión.",
+            "Reportar resultados al consejo o a los propietarios.",
         ]),
         "requisitos": "\n".join([
-            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
-            "Normatividad fiscal mexicana y NIF/IFRS.",
-            "Liderazgo y pensamiento estratégico.",
+            "8 a 10 años en dirección general o corporativa.",
+            "Experiencia liderando múltiples unidades o empresas.",
+            "Visión estratégica y financiera.",
         ]),
-        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
+        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -78,32 +78,31 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-operaciones-industriales-manufactura",
-        "title": "Gerente de Producción - Acería",
+        "slug": "director-financiero-grupo-corporativo",
+        "title": "Director Financiero - Grupo Corporativo",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$100,000",
+        "salary_display": "$120,000",
         "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Dirigir la operación industrial completa (producción, "
-            "mantenimiento y calidad), maximizando eficiencia, seguridad y "
-            "rentabilidad de la planta."
+            "Dirigir la estrategia financiera de un grupo corporativo, "
+            "garantizando rentabilidad, control y cumplimiento."
         ),
         "responsabilidades": "\n".join([
-            "Dirigir las áreas de producción, mantenimiento, calidad y seguridad.",
-            "Definir metas de productividad, costos y eficiencia operativa.",
-            "Supervisar el cumplimiento normativo (seguridad industrial, ambiental, STPS).",
-            "Liderar a los gerentes de planta y equipos de mejora continua.",
+            "Dirigir presupuesto, tesorería y contabilidad del grupo.",
+            "Analizar rentabilidad por unidad de negocio.",
+            "Gestionar la relación con bancos e inversionistas.",
+            "Asesorar a la dirección en decisiones estratégicas.",
         ]),
         "requisitos": "\n".join([
-            "8 a 10 años en dirección de operaciones industriales.",
-            "Experiencia en acería, producción o procesos industriales.",
-            "Liderazgo de plantas o múltiples líneas de producción.",
+            "6 a 10 años en finanzas, 3+ en puesto de gerencia o dirección.",
+            "Normatividad fiscal mexicana y NIF/IFRS.",
+            "Liderazgo y pensamiento estratégico.",
         ]),
-        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + bono anual.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -138,31 +137,32 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-comercial-automotriz",
-        "title": "Director Comercial - Automotriz",
+        "slug": "director-operaciones-industriales-manufactura",
+        "title": "Gerente de Producción - Acería",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$85,000 + bonos",
-        "salary_tier": "blue",
+        "salary_display": "$120,000",
+        "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Liderar la estrategia comercial y el equipo de ventas para "
-            "impulsar el crecimiento rentable del negocio."
+            "Dirigir la operación industrial completa (producción, "
+            "mantenimiento y calidad), maximizando eficiencia, seguridad y "
+            "rentabilidad de la planta."
         ),
         "responsabilidades": "\n".join([
-            "Diseñar el plan comercial y las metas de venta.",
-            "Liderar y desarrollar al equipo comercial.",
-            "Negociar cuentas y clientes estratégicos.",
-            "Analizar mercado y competencia.",
+            "Dirigir las áreas de producción, mantenimiento, calidad y seguridad.",
+            "Definir metas de productividad, costos y eficiencia operativa.",
+            "Supervisar el cumplimiento normativo (seguridad industrial, ambiental, STPS).",
+            "Liderar a los gerentes de planta y equipos de mejora continua.",
         ]),
         "requisitos": "\n".join([
-            "5 a 8 años en puestos comerciales, liderando equipos.",
-            "Negociación y orientación a resultados.",
-            "Excel avanzado y CRM.",
+            "8 a 10 años en dirección de operaciones industriales.",
+            "Experiencia en acería, producción o procesos industriales.",
+            "Liderazgo de plantas o múltiples líneas de producción.",
         ]),
-        "prestaciones": "$100,000 mensuales + bonos por resultados + prestaciones superiores a la ley + auto o gasolina.",
+        "prestaciones": "$120,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -173,7 +173,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$18,000",
+        "salary_display": "$20,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -196,37 +196,37 @@ VACANCIES = [
         "published_at": "2026-08-24",
     },
     {
-        "slug": "residente-obra-construccion-infraestructura",
-        "title": "Residente de Obra - Construcción",
+        "slug": "director-comercial-automotriz",
+        "title": "Director Comercial - Automotriz",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$30,000",
-        "salary_tier": None,
+        "salary_display": "$100,000 + bonos",
+        "salary_tier": "gold",
         "positions": 1,
         "objetivo": (
-            "Supervisar la ejecución de obra, garantizando tiempos, "
-            "presupuesto, calidad y seguridad."
+            "Liderar la estrategia comercial y el equipo de ventas para "
+            "impulsar el crecimiento rentable del negocio."
         ),
         "responsabilidades": "\n".join([
-            "Supervisar el avance físico y financiero de la obra.",
-            "Coordinar cuadrillas, contratistas y materiales.",
-            "Garantizar normativa de construcción y seguridad.",
-            "Elaborar reportes y estimaciones de avance.",
+            "Diseñar el plan comercial y las metas de venta.",
+            "Liderar y desarrollar al equipo comercial.",
+            "Negociar cuentas y clientes estratégicos.",
+            "Analizar mercado y competencia.",
         ]),
         "requisitos": "\n".join([
-            "3 a 5 años como residente de obra.",
-            "Manejo de AutoCAD y MS Project.",
-            "Disponibilidad para foráneo según proyecto.",
+            "5 a 8 años en puestos comerciales, liderando equipos.",
+            "Negociación y orientación a resultados.",
+            "Excel avanzado y CRM.",
         ]),
-        "prestaciones": "$25,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
+        "prestaciones": "$100,000 mensuales + bonos por resultados + prestaciones superiores a la ley + auto o gasolina.",
         "status": "active",
         "published_at": "2026-08-24",
     },
     {
         "slug": "asesor-comercial-concesionarias-automotrices",
-        "title": "Asesor Comercial - Automotriz",
+        "title": "Asesor Comercial - Concesionarias Automotrices",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
@@ -260,7 +260,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$32,000",
+        "salary_display": "$45,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -278,36 +278,36 @@ VACANCIES = [
             "Conocimiento de nómina y normatividad laboral.",
             "Negociación y manejo de conflictos.",
         ]),
-        "prestaciones": "$32,000 mensuales + prestaciones superiores a la ley + fondo de ahorro.",
+        "prestaciones": "$45,000 mensuales + prestaciones superiores a la ley + fondo de ahorro.",
         "status": "active",
         "published_at": "2026-08-24",
     },
     {
-        "slug": "director-general-grupo-corporativo",
-        "title": "Director General - Grupo Corporativo",
+        "slug": "residente-obra-construccion-infraestructura",
+        "title": "Residente de Obra - Construcción e Infraestructura",
         "location": "México",
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$250,000",
-        "salary_tier": "gold",
+        "salary_display": "$25,000",
+        "salary_tier": None,
         "positions": 1,
         "objetivo": (
-            "Dirigir la operación y estrategia de un grupo con varias unidades "
-            "de negocio, garantizando resultados y gobernanza corporativa."
+            "Supervisar la ejecución de obra, garantizando tiempos, "
+            "presupuesto, calidad y seguridad."
         ),
         "responsabilidades": "\n".join([
-            "Definir la estrategia y objetivos del grupo.",
-            "Supervisar a los directores de cada unidad de negocio.",
-            "Aprobar presupuestos, inversiones y expansión.",
-            "Reportar resultados al consejo o a los propietarios.",
+            "Supervisar el avance físico y financiero de la obra.",
+            "Coordinar cuadrillas, contratistas y materiales.",
+            "Garantizar normativa de construcción y seguridad.",
+            "Elaborar reportes y estimaciones de avance.",
         ]),
         "requisitos": "\n".join([
-            "8 a 10 años en dirección general o corporativa.",
-            "Experiencia liderando múltiples unidades o empresas.",
-            "Visión estratégica y financiera.",
+            "3 a 5 años como residente de obra.",
+            "Manejo de AutoCAD y MS Project.",
+            "Disponibilidad para foráneo según proyecto.",
         ]),
-        "prestaciones": "$150,000 mensuales + prestaciones superiores a la ley + seguro de gastos médicos mayores + auto + bono por resultados.",
+        "prestaciones": "$25,000 mensuales + prestaciones de ley/superiores + viáticos en proyectos foráneos.",
         "status": "active",
         "published_at": "2026-08-24",
     },
@@ -318,7 +318,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$50,000",
+        "salary_display": "$40,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
@@ -347,7 +347,7 @@ VACANCIES = [
         "modality": "Presencial",
         "is_confidential": True,
         "company_label": "Confidencial",
-        "salary_display": "$45,000",
+        "salary_display": "$38,000",
         "salary_tier": None,
         "positions": 1,
         "objetivo": (
