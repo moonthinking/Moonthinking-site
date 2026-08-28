@@ -166,6 +166,48 @@ def send_lead_email(lead):
     return _send(subject, html, attachment_filename=attachment_filename)
 
 
+def send_open_application_email(application):
+    """Notify the recruitment inbox when someone submits their CV through
+    the general 'Envía tu CV' page (banco de talento) — not tied to a
+    specific vacancy, just a candidate who wants to be on file for future
+    openings."""
+    name = (application.get("full_name") or "").strip() or "Candidato sin nombre"
+    subject = f"Nuevo CV recibido — {name} (banco de talento)"
+
+    rows = [
+        ("Nombre completo", application.get("full_name")),
+        ("Correo", application.get("email")),
+        ("Teléfono", application.get("phone")),
+        ("Experiencia / perfil", application.get("message")),
+    ]
+    row_html = []
+    for label, value in rows:
+        value = (value or "").strip()
+        if value:
+            row_html.append(
+                f"<tr><td style='padding:6px 12px;color:#666;vertical-align:top;white-space:nowrap'>{label}</td>"
+                f"<td style='padding:6px 12px'>{value}</td></tr>"
+            )
+
+    resume_filename = application.get("resume_filename")
+    cv_note = (
+        "<p style='margin-top:14px;color:#0a7a3d;font-weight:600'>Adjuntó su CV — lo encuentras aquí abajo, o en el panel de administración, sección Postulaciones.</p>"
+        if resume_filename
+        else "<p style='margin-top:14px;color:#b8860b'>No adjuntó CV en este formulario.</p>"
+    )
+
+    html = f"""
+    <div style="font-family:Arial,Helvetica,sans-serif;max-width:640px">
+      <h2 style="margin-bottom:4px">Nuevo CV — banco de talento</h2>
+      <p style="color:#666;margin-top:0">No aplica a una vacante específica; llegó desde "Envía tu CV".</p>
+      <table style="border-collapse:collapse;width:100%">{''.join(row_html)}</table>
+      {cv_note}
+      <p style="margin-top:20px;color:#666">Puedes ver el detalle completo y descargar el CV desde el panel de administración, sección "Postulaciones".</p>
+    </div>
+    """
+    return _send(subject, html, attachment_filename=resume_filename)
+
+
 def send_application_email(application):
     """Notify the recruitment inbox immediately when a candidate applies to
     a vacancy (with or without attaching their CV) from the 'Postularme'

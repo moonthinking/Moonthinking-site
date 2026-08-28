@@ -81,14 +81,10 @@ def _salary_value(salary_display):
 @app.route("/")
 def inicio():
     active_vacancies = [vacancy_to_view(v) for v in vacantes_data.get_all() if v.get("status") == "active"]
-    # "Vacantes destacadas": 3 vacantes fijas elegidas a mano (no por sueldo).
-    featured_slugs = [
-        "director-operaciones-industriales-manufactura",
-        "director-financiero-grupo-corporativo",
-        "director-comercial-automotriz",
-    ]
-    by_slug = {v.get("slug"): v for v in active_vacancies}
-    featured_vacancies = [by_slug[s] for s in featured_slugs if s in by_slug]
+    # "Vacantes destacadas": siempre las 3 vacantes activas mejor pagadas.
+    featured_vacancies = sorted(
+        active_vacancies, key=lambda v: _salary_value(v.get("salary_display")), reverse=True
+    )[:3]
     # "Blog": los 3 artículos fijos (vienen de blog_data.py, no de la base de datos).
     latest_posts = blog_data.get_all()
     return render_template("inicio.html", featured_vacancies=featured_vacancies, latest_posts=latest_posts)
@@ -114,7 +110,6 @@ def empresas():
             "needs_vehicle", "payment_method",
             "candidate_personality", "vacancy_type", "has_procedures_manual",
             "additional_comments",
-            "company_description", "previous_employee_reason", "improvement_feedback",
         ]
         values = {f: request.form.get(f, "").strip() for f in fields}
 
@@ -231,6 +226,48 @@ def vacante_apply(slug):
         return render_template("vacante_apply.html", v=v, sent=True)
 
     return render_template("vacante_apply.html", v=v, sent=False)
+
+
+@app.route("/enviar-cv", methods=["GET", "POST"])
+def enviar_cv():
+    """Banco de talento: formulario general para quien quiera dejar su CV
+    aunque ninguna vacante activa encaje con su perfil todavía. No está
+    ligado a ninguna vacante — se guarda en la misma tabla `applications`
+    (vacancy_id = NULL) para que aparezca junto a las demás postulaciones
+    en el panel de administración, y se notifica por correo igual que una
+    postulación normal."""
+    if request.method == "POST":
+        resume_filename = None
+        f = request.files.get("resume")
+        if f and f.filename:
+            resume_filename = secure_filename(f"cv-{int(datetime.datetime.utcnow().timestamp())}-{f.filename}")
+            f.save(os.path.join(UPLOAD_DIR, resume_filename))
+
+        full_name = request.form.get("full_name", "").strip()
+        email = request.form.get("email", "").strip()
+        phone = request.form.get("phone", "").strip()
+        message = request.form.get("message", "").strip()
+
+        conn = db.get_db()
+        conn.execute(
+            "INSERT INTO applications (vacancy_id, vacancy_title, full_name, email, phone, message, resume_filename, created_at) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (None, "Aplicación espontánea (banco de talento)", full_name, email, phone, message, resume_filename, db.now()),
+        )
+        conn.commit()
+        conn.close()
+
+        notifications.send_open_application_email({
+            "full_name": full_name,
+            "email": email,
+            "phone": phone,
+            "message": message,
+            "resume_filename": resume_filename,
+        })
+
+        return render_template("enviar_cv.html", sent=True)
+
+    return render_template("enviar_cv.html", sent=False)
 
 
 # ---------------------------------------------------------------
