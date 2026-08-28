@@ -480,16 +480,31 @@ table.admin-table td{padding:14px 18px;border-top:1px solid var(--border);color:
      esas mismas 3 acciones ya están duplicadas como enlaces dentro del
      menú hamburguesa (.nav-only-mobile), así que aquí se ocultan. */
   header.site .cta-group{display:none}
+  @keyframes navDrop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
   header.site nav{
-    display:none;order:5;width:100%;flex-direction:column;align-items:stretch;
-    gap:0;margin:0;padding:8px 0 14px;border-top:1px solid rgba(255,255,255,.14);
-    background:var(--navy-deep);
+    display:none;order:5;flex:0 0 auto;flex-direction:column;align-items:stretch;
+    gap:0;width:calc(100% + 64px);margin:14px -32px -14px;padding:2px 0 18px;
+    background:linear-gradient(165deg,var(--navy-deep) 0%,#001d49 60%,#012a5e 100%);
+    border-top:1px solid rgba(12,171,218,.22);
+    border-radius:0 0 22px 22px;
+    box-shadow:0 26px 44px -22px rgba(0,10,25,.6);
+    animation:navDrop .2s ease;
   }
   header.site.nav-open nav{display:flex}
   header.site.on-dark{background:var(--navy-deep);margin-bottom:0}
-  header.site nav a{padding:13px 2px;opacity:1;border-bottom:1px solid rgba(255,255,255,.08)}
-  header.site nav a:last-child{border-bottom:none}
-  header.site nav .nav-only-mobile{display:block;font-weight:700}
+  header.site nav a{padding:14px 32px;opacity:.85;border-bottom:1px solid rgba(255,255,255,.07);transition:opacity .15s,background .15s,padding-left .15s;font-size:15px}
+  header.site nav a:not(.nav-only-mobile):active{opacity:1;background:rgba(12,171,218,.1);padding-left:37px}
+  header.site nav a:last-of-type{border-bottom:none}
+  header.site nav .nav-only-mobile{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    margin:10px 22px 0;padding:13px 18px;border-radius:11px;
+    font-weight:700;font-size:14.5px;opacity:1;border-bottom:none;
+  }
+  header.site nav .nav-only-mobile:last-child{margin-bottom:2px}
+  header.site nav .nav-only-mobile:active{transform:scale(.97)}
+  header.site nav a.nav-cta-outline{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  header.site nav a.nav-cta-navy{background:var(--navy);color:#fff;box-shadow:0 10px 20px -9px rgba(1,52,108,.65)}
+  header.site nav a.nav-cta-primary{background:var(--cyan);color:var(--navy-deep);box-shadow:0 10px 20px -9px rgba(12,171,218,.6)}
   .hero h1{font-size:36px}
   .subhero h1{font-size:30px}
   .grid-3,.grid-4,.vac-grid,.dual-offer,.mini-sol,.mini-sol.cols-3,.mv-grid{grid-template-columns:1fr}
