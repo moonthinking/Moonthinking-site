@@ -111,6 +111,8 @@ header.site.on-light.scrolled{box-shadow:var(--shadow-sm)}
 .btn-primary:hover{background:#22c1ec}
 .btn-white{background:#fff;color:var(--navy-deep);box-shadow:0 8px 20px -8px rgba(0,16,42,.3)}
 .btn-white:hover{background:#e8f0f7}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 8px 20px -8px rgba(1,52,108,.55)}
+.btn-navy:hover{background:var(--blue)}
 .btn-outline-light{border-color:rgba(255,255,255,.55);color:#fff}
 .btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .btn-outline-navy{border-color:rgba(1,52,108,.35);color:var(--navy)}
@@ -474,6 +476,10 @@ table.admin-table td{padding:14px 18px;border-top:1px solid var(--border);color:
 @media(max-width:760px){
   .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
   header.site .wrap{flex-wrap:wrap;row-gap:12px;height:auto;padding-top:14px;padding-bottom:14px}
+  /* Con 3 botones el grupo ya no cabe junto al logo en pantallas angostas;
+     esas mismas 3 acciones ya están duplicadas como enlaces dentro del
+     menú hamburguesa (.nav-only-mobile), así que aquí se ocultan. */
+  header.site .cta-group{display:none}
   header.site nav{
     display:none;order:5;width:100%;flex-direction:column;align-items:stretch;
     gap:0;margin:0;padding:8px 0 14px;border-top:1px solid rgba(255,255,255,.14);
