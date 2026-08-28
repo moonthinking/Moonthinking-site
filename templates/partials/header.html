@@ -11,10 +11,12 @@
       <a href="{{ url_for('soluciones') }}">Soluciones</a>
       <a href="{{ url_for('blog') }}">Blog</a>
       <a href="{{ url_for('vacantes') }}" class="nav-only-mobile">Vacantes activas</a>
+      <a href="{{ url_for('enviar_cv') }}" class="nav-only-mobile">Envía tu CV</a>
       <a href="{{ url_for('empresas') }}" class="nav-only-mobile">Quiero contratar</a>
     </nav>
     <div class="cta-group">
       <a href="{{ url_for('vacantes') }}" class="btn btn-white btn-sm">Vacantes activas</a>
+      <a href="{{ url_for('enviar_cv') }}" class="btn btn-navy btn-sm">Envía tu CV</a>
       <a href="{{ url_for('empresas') }}" class="btn btn-primary btn-sm">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
