@@ -11,6 +11,7 @@
       <div class="cta-row">
         <a href="{{ url_for('empresas') }}" class="btn btn-primary">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <a href="{{ url_for('vacantes') }}" class="btn btn-outline-light">Ver vacantes</a>
+        <a href="{{ url_for('enviar_cv') }}" class="btn btn-navy">Envía tu CV</a>
       </div>
     </div>
   </section>
@@ -19,7 +20,7 @@
     <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
     <div class="wrap" style="max-width:760px">
       <div class="eyebrow-sm"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Qué hacemos</div>
-      <h2>Headhunting especializado para posiciones clave.</h2>
+      <h2>Soluciones especializadas de capital humano.</h2>
       <p class="lead">En Moonthinking diseñamos procesos de búsqueda y selección para posiciones clave y de alta responsabilidad. Trabajamos con empresas de distintas industrias en México, acompañando cada búsqueda con un proceso cercano, ágil y orientado a resultados, desarrollando una sólida red de talento y un profundo conocimiento del mercado.</p>
     </div>
   </section>
@@ -92,7 +93,10 @@
     <div class="half b">
       <h3>¿Buscas tu próxima oportunidad?</h3>
       <p>Explora nuestras vacantes activas o únete a nuestra base de talento.</p>
-      <a href="{{ url_for('vacantes') }}" class="btn btn-outline-light">Ver vacantes <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="{{ url_for('vacantes') }}" class="btn btn-outline-light">Ver vacantes <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="{{ url_for('enviar_cv') }}" class="btn btn-white">Envía tu CV <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
     </div>
   </section>
 
