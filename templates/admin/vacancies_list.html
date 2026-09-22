@@ -20,7 +20,6 @@
     <td><span class="badge badge-{{ v.status }}">{{ v.status }}</span></td>
     <td>{{ v.published_at }}</td>
     <td style="white-space:nowrap">
-      <a href="{{ url_for('vacante_detail', slug=v.slug) }}" target="_blank" class="btn btn-outline btn-sm">Ver</a>
       <a href="{{ url_for('admin.vacancy_edit', vid=v.id) }}" class="btn btn-outline btn-sm">Editar</a>
       <form method="post" action="{{ url_for('admin.vacancy_delete', vid=v.id) }}" style="display:inline" onsubmit="return confirm('¿Eliminar esta vacante?');">
         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
