@@ -168,17 +168,20 @@ def send_lead_email(lead):
 
 def send_open_application_email(application):
     """Notify the recruitment inbox when someone submits their CV through
-    the general 'Envía tu CV' page (banco de talento) — not tied to a
-    specific vacancy, just a candidate who wants to be on file for future
-    openings."""
+    el formulario único 'Envía tu CV'. Las vacantes se publican fuera del
+    sitio (Facebook, LinkedIn, Instagram, WhatsApp, CompuTrabajo), así que
+    el candidato escribe a mano para cuál vacante aplica — ese texto llega
+    aquí en 'applied_vacancy'."""
     name = (application.get("full_name") or "").strip() or "Candidato sin nombre"
-    subject = f"Nuevo CV recibido — {name} (banco de talento)"
+    applied_vacancy = (application.get("applied_vacancy") or "").strip() or "No especificada"
+    subject = f"Nueva postulación — {name} · {applied_vacancy}"
 
     rows = [
+        ("Vacante para la que aplica", applied_vacancy),
         ("Nombre completo", application.get("full_name")),
         ("Correo", application.get("email")),
         ("Teléfono", application.get("phone")),
-        ("Experiencia / perfil", application.get("message")),
+        ("Experiencia / cómo encaja con la vacante", application.get("message")),
     ]
     row_html = []
     for label, value in rows:
