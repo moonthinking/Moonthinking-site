@@ -17,11 +17,11 @@
       {% else %}
       <div class="eyebrow-sm"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Envía tu CV</div>
       <h2 style="margin-bottom:6px">Postúlate a una vacante</h2>
-      <p class="lead">Publicamos nuestras vacantes en Facebook, LinkedIn, Instagram, WhatsApp y CompuTrabajo. Dinos para cuál estás aplicando y cuéntanos sobre ti.</p>
+      <p class="lead">Publicamos nuestras vacantes en redes sociales y bolsas de trabajo. Dinos para cuál estás aplicando y cuéntanos sobre ti.</p>
 
       <form method="post" enctype="multipart/form-data" class="form-card" style="margin-top:24px">
         <div class="form-grid">
-          <div class="f-field full"><label>Vacante para la que aplicas</label><input type="text" name="applied_vacancy" placeholder="Ej. Gerente de Producción - Acería" required></div>
+          <div class="f-field full"><label>Vacante para la que aplicas</label><input type="text" name="applied_vacancy" required></div>
           <div class="f-field full"><label>Nombre completo</label><input type="text" name="full_name" required></div>
           <div class="f-field"><label>Correo</label><input type="email" name="email" required></div>
           <div class="f-field"><label>Teléfono</label><input type="tel" name="phone" required></div>
