@@ -143,12 +143,12 @@ def enviar_cv():
 #  Igual que las vacantes: 3 artículos fijos en el código
 #  (blog_data.py), no vienen de la base de datos, para que no se
 #  pierdan con los reinicios del plan gratuito de Render.
+#
+#  Ya no hay una página de listado pública (/blog) ni un link
+#  "Blog" en el menú — los artículos solo se muestran en la
+#  sección "Artículos" de Inicio, cuyas tarjetas siguen abriendo
+#  la ficha completa de cada artículo en /blog/<slug>.
 # ---------------------------------------------------------------
-
-@app.route("/blog")
-def blog():
-    return render_template("blog_list.html", posts=blog_data.get_all())
-
 
 @app.route("/blog/<slug>")
 def blog_detail(slug):
