@@ -201,8 +201,7 @@ def send_open_application_email(application):
 
     html = f"""
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:640px">
-      <h2 style="margin-bottom:4px">Nuevo CV — banco de talento</h2>
-      <p style="color:#666;margin-top:0">No aplica a una vacante específica; llegó desde "Envía tu CV".</p>
+      <h2 style="margin-bottom:4px">Nuevo CV</h2>
       <table style="border-collapse:collapse;width:100%">{''.join(row_html)}</table>
       {cv_note}
       <p style="margin-top:20px;color:#666">Puedes ver el detalle completo y descargar el CV desde el panel de administración, sección "Postulaciones".</p>
