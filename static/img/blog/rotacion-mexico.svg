@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Rotación de personal y escasez de talento en México">
   <defs>
     <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#01346C"/>
-      <stop offset="55%" stop-color="#004C85"/>
-      <stop offset="130%" stop-color="#0CABDA"/>
+      <stop offset="0%" stop-color="#0A336E"/>
+      <stop offset="55%" stop-color="#0E3F86"/>
+      <stop offset="130%" stop-color="#12B3E9"/>
     </linearGradient>
   </defs>
   <rect width="600" height="400" fill="url(#g2)"/>

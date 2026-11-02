@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Entrevista de trabajo con headhunter">
   <defs>
     <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#01346C"/>
-      <stop offset="55%" stop-color="#004C85"/>
-      <stop offset="130%" stop-color="#0CABDA"/>
+      <stop offset="0%" stop-color="#0A336E"/>
+      <stop offset="55%" stop-color="#0E3F86"/>
+      <stop offset="130%" stop-color="#12B3E9"/>
     </linearGradient>
   </defs>
   <rect width="600" height="400" fill="url(#g1)"/>
@@ -26,6 +26,6 @@
   <!-- speech / checkmark badge between them -->
   <g transform="translate(255,60)">
     <circle cx="45" cy="30" r="30" fill="#ffffff"/>
-    <path d="M31 30 L41 40 L60 18" fill="none" stroke="#0CABDA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M31 30 L41 40 L60 18" fill="none" stroke="#12B3E9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>
