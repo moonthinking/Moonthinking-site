@@ -2,16 +2,22 @@
 {% block content %}
 
   {% include "partials/header.html" %}
-  <section class="hero">
-    <div class="plexus"><img src="{{ url_for('static', filename='img/plexus_hero.svg') }}" alt=""></div>
-    <div class="wrap">
-      <span class="badge">Más de 8 años acompañando a empresas en su crecimiento</span>
-      <h1>Encontramos al talento que tu empresa necesita para crecer.</h1>
-      <p class="sub">Búsqueda y selección especializada de profesionales y ejecutivos en México. Procesos cercanos, ágiles y orientados a resultados.</p>
-      <div class="cta-row">
-        <a href="{{ url_for('empresas') }}" class="btn btn-primary">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="{{ url_for('enviar_cv') }}" class="btn btn-navy">Envía tu CV</a>
+  <section class="hero hero-split">
+    <div class="hero-left">
+      <div class="wrap">
+        <span class="badge">Más de 8 años acompañando a empresas en su crecimiento</span>
+        <h1>Encontramos al <em>talento</em> que tu empresa necesita para crecer.</h1>
+        <p class="sub">Búsqueda y selección especializada de profesionales y ejecutivos en México. Procesos cercanos, ágiles y orientados a resultados.</p>
+        <div class="cta-row">
+          <a href="{{ url_for('empresas') }}" class="btn btn-primary">Quiero contratar <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a href="{{ url_for('enviar_cv') }}" class="btn btn-outline-light">Envía tu CV</a>
+        </div>
       </div>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <span class="hero-plus">+</span>
+      <div class="hero-big">8+</div>
+      <p class="hero-big-t">años acompañando a empresas mexicanas en su crecimiento.</p>
     </div>
   </section>
 
