@@ -3,10 +3,15 @@
 {% block content %}
 
   {% include "partials/header.html" %}
-  <div style="height:78px;background:var(--navy-deep)"></div>
-  <section class="section off" style="overflow:hidden;padding-top:150px;min-height:60vh">
-    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
-    <div class="wrap" style="max-width:600px">
+  <section class="form-hero">
+    <div class="wrap" style="max-width:700px">
+      <span class="hero-pill">Envía tu CV</span>
+      <h1>Encuentra tu próxima oportunidad</h1>
+      <p>Publicamos nuestras oportunidades laborales en bolsas de trabajo y redes sociales. Conoce nuestras vacantes y postúlate a la posición que mejor se ajuste a tu perfil.</p>
+    </div>
+  </section>
+  <section class="form-sec">
+    <div class="wrap" style="max-width:640px">
 
       {% if sent %}
       <div class="form-card" style="text-align:center;padding:48px 32px">
@@ -15,11 +20,7 @@
         <a href="{{ url_for('inicio') }}" class="btn btn-outline-navy btn-sm" style="margin-top:22px">Volver al inicio</a>
       </div>
       {% else %}
-      <div class="eyebrow-lg" style="justify-content:center;width:100%;font-size:22px"><img class="moon-mark" src="{{ url_for('static', filename='img/moon_icon.png') }}" alt="">Envía tu CV</div>
-      <h2 style="text-align:center">Encuentra tu próxima oportunidad</h2>
-      <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto">Publicamos nuestras oportunidades laborales en bolsas de trabajo y redes sociales. Conoce nuestras vacantes y postúlate a la posición que mejor se ajuste a tu perfil.</p>
-
-      <form method="post" enctype="multipart/form-data" class="form-card" style="margin-top:24px">
+      <form method="post" enctype="multipart/form-data" class="form-card">
         <div class="form-grid">
           <div class="f-field full"><label>Vacante para la que aplicas</label><input type="text" name="applied_vacancy" required></div>
           <div class="f-field full"><label>Nombre completo</label><input type="text" name="full_name" required></div>

@@ -3,11 +3,16 @@
 {% block content %}
 
   {% include "partials/header.html" %}
-  <div style="height:78px;background:var(--navy-deep)"></div>
-  <section class="section off" style="overflow:hidden;padding-top:150px;min-height:60vh">
-    <div class="plexus-light"><img src="{{ url_for('static', filename='img/plexus_light.svg') }}" alt=""></div>
-    <div class="wrap" style="max-width:600px">
-      <a href="{{ url_for('vacante_detail', slug=v.slug) }}" class="link-ghost" style="display:inline-block;margin-bottom:18px">&larr; Volver a la vacante</a>
+  <section class="form-hero">
+    <div class="wrap" style="max-width:700px">
+      <a href="{{ url_for('vacante_detail', slug=v.slug) }}" class="hero-back">&larr; Volver a la vacante</a>
+      <span class="hero-pill">Postularme</span>
+      <h1>{{ v.title }}</h1>
+      <p>{{ v.location }} &middot; {{ v.modality }}</p>
+    </div>
+  </section>
+  <section class="form-sec">
+    <div class="wrap" style="max-width:640px">
 
       {% if sent %}
       <div class="form-card" style="text-align:center;padding:48px 32px">
@@ -16,11 +21,7 @@
         <a href="{{ url_for('vacantes') }}" class="btn btn-outline-navy btn-sm" style="margin-top:22px">Ver otras vacantes</a>
       </div>
       {% else %}
-      <div class="eyebrow-sm">Postularme</div>
-      <h2 style="margin-bottom:6px">{{ v.title }}</h2>
-      <p class="lead">{{ v.location }} &middot; {{ v.modality }}</p>
-
-      <form method="post" enctype="multipart/form-data" class="form-card" style="margin-top:24px">
+      <form method="post" enctype="multipart/form-data" class="form-card">
         <div class="form-grid">
           <div class="f-field full"><label>Nombre completo</label><input type="text" name="full_name" required></div>
           <div class="f-field"><label>Correo</label><input type="email" name="email" required></div>
