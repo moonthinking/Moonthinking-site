@@ -650,3 +650,14 @@ footer.site::before{content:"";position:absolute;right:-100px;top:-80px;width:42
 .eyebrow-lg[style]{width:fit-content!important;margin-left:auto;margin-right:auto;font-size:13px!important}
 h1,h2,h3,h4,h5{color:var(--navy)}
 .nav-toggle{margin-left:auto}
+
+/* ---------- LOGO OFICIAL horizontal (nov 2026) ---------- */
+header.site .wrap{height:84px}
+header.site .logo,header.site.on-dark .logo,header.site.on-light .logo{height:64px;width:auto}
+header.site.on-dark.scrolled .logo,header.site.on-light.scrolled .logo{height:54px}
+.foot-grid .logo-col img{height:86px;width:auto;margin-bottom:16px}
+@media (max-width:760px){
+  header.site .logo,header.site.on-dark .logo,header.site.on-light .logo{height:44px}
+  header.site.on-dark.scrolled .logo,header.site.on-light.scrolled .logo{height:40px}
+  header.site .wrap{height:auto}
+}
