@@ -661,3 +661,24 @@ header.site.on-dark.scrolled .logo,header.site.on-light.scrolled .logo{height:54
   header.site.on-dark.scrolled .logo,header.site.on-light.scrolled .logo{height:40px}
   header.site .wrap{height:auto}
 }
+
+/* ===== nov-2026: paginas de formulario/detalle con diseno de marca (sin banda negra) y footer azul marino ===== */
+div[style*="height:78px"]{display:none!important}
+.section.off[style*="padding-top:150px"]{padding-top:56px!important}
+.form-hero{position:relative;overflow:hidden;text-align:center;padding:64px 0 150px;background:linear-gradient(135deg,#082B5E 0%,#0A336E 50%,#0F4C9C 100%)}
+.form-hero::before{content:"";position:absolute;right:-90px;top:-130px;width:440px;height:440px;background:url('../img/luna_white.png') no-repeat center/contain;opacity:.12}
+.form-hero .wrap{position:relative;z-index:2}
+.form-hero .hero-pill{display:inline-block;padding:9px 22px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+.form-hero .hero-back{display:block;color:#9ADCF3;font-size:14px;font-weight:600;margin-bottom:22px}
+.form-hero h1{color:#fff;font-size:44px;line-height:1.12;letter-spacing:-.02em}
+.form-hero p{color:#C9D8EE;font-size:17px;line-height:1.65;margin:16px auto 0;max-width:600px}
+.form-sec{margin-top:-80px;position:relative;z-index:2;padding:0 0 96px;background:linear-gradient(180deg,transparent 80px,var(--off) 80px);min-height:40vh}
+.form-sec .form-card{margin-top:0;box-shadow:0 24px 60px -24px rgba(10,51,110,.35)}
+@media(max-width:700px){.form-hero{padding:48px 0 130px}.form-hero h1{font-size:32px}.form-sec{padding-bottom:64px}}
+/* footer azul marino de marca */
+footer.site{background:linear-gradient(135deg,#082B5E 0%,#0A336E 55%,#0E3F86 100%);color:#D5E4F7}
+footer.site::before{opacity:.05}
+.foot-grid .logo-col img{width:250px;height:auto;max-width:100%;margin-bottom:18px}
+.foot-grid .logo-col p{color:#C9DBF2}
+.foot-grid .contact-item .lbl{color:#9BB3D3}
+.foot-grid{border-bottom-color:rgba(255,255,255,.16)}
