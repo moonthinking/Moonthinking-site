@@ -679,3 +679,14 @@ footer.site::before{opacity:.05}
 .foot-grid .logo-col p{color:#C9DBF2}
 .foot-grid .contact-item .lbl{color:#9BB3D3}
 .foot-grid{border-bottom-color:rgba(255,255,255,.16)}
+
+/* Aviso de privacidad */
+.legal-doc{padding:44px 48px;color:#33445C;line-height:1.7;font-size:15.5px}
+.legal-doc h2{color:var(--navy);font-size:20px;margin:30px 0 10px;letter-spacing:-.01em}
+.legal-doc h2:first-of-type{margin-top:8px}
+.legal-doc p{margin:0 0 12px}
+.legal-doc ul{margin:0 0 14px 22px;padding:0;list-style:disc}
+.legal-doc li{margin:0 0 6px;list-style:disc;display:list-item}
+.legal-doc a{color:#0E8FD0;text-decoration:underline}
+.legal-doc .legal-updated{font-size:13px;color:#7A8AA0;margin-bottom:18px}
+@media(max-width:700px){.legal-doc{padding:28px 22px;font-size:15px}}
