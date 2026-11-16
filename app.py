@@ -85,6 +85,11 @@ def empresas():
     return render_template("empresas.html", sent=False)
 
 
+@app.route("/aviso-de-privacidad")
+def aviso_privacidad():
+    return render_template("aviso_privacidad.html")
+
+
 @app.route("/nosotros")
 def nosotros():
     return render_template("nosotros.html")
