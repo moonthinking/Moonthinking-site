@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Aviso de Privacidad · Moonthinking{% endblock %}
+{% block content %}
+{% set razon_social = "Maribel Rodríguez Lozano (RFC ROLM930506TV2)" %}
+{% set domicilio = "Sierra de Apiaca #146, Lomas 4ta Sección, C.P. 78216, San Luis Potosí, S.L.P., México" %}
+{% set correo_privacidad = "reclutamiento.cv@moonthinking.com" %}
+{% set actualizacion = "15 de noviembre de 2026" %}
+
+  {% include "partials/header.html" %}
+  <section class="form-hero">
+    <div class="wrap" style="max-width:760px">
+      <span class="hero-pill">Legal</span>
+      <h1>Aviso de Privacidad</h1>
+      <p>Cómo recabamos, usamos y protegemos tus datos personales.</p>
+    </div>
+  </section>
+  <section class="form-sec">
+    <div class="wrap" style="max-width:820px">
+      <article class="form-card legal-doc">
+
+        <p class="legal-updated">Última actualización: {{ actualizacion }}</p>
+
+        <h2>1. Responsable de tus datos personales</h2>
+        <p>{{ razon_social }}, quien opera comercialmente como Moon Thinking (en adelante, &ldquo;Moon Thinking&rdquo;), con domicilio en {{ domicilio }}, es responsable del tratamiento de los datos personales que nos proporcionas, de conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y demás normativa aplicable.</p>
+        <p>Para cualquier tema relacionado con tus datos personales puedes escribirnos a <a href="mailto:{{ correo_privacidad }}">{{ correo_privacidad }}</a>.</p>
+
+        <h2>2. Datos personales que recabamos</h2>
+        <p>Podemos recabar tus datos cuando nos los proporcionas directamente a través de nuestro sitio web, formularios (incluidos los de anuncios en redes sociales como LinkedIn y Facebook), WhatsApp, correo electrónico, teléfono, bolsas de trabajo o en entrevistas.</p>
+        <p><strong>Si eres candidato:</strong> nombre, teléfono, correo electrónico, ciudad de residencia, currículum vitae, historial académico y laboral, expectativas salariales, referencias laborales y la información que decidas compartir durante el proceso de selección.</p>
+        <p><strong>Si eres cliente o prospecto:</strong> nombre, cargo, empresa, teléfono, correo electrónico y la información de la vacante o necesidad de contratación que nos compartas.</p>
+        <p>No solicitamos datos personales sensibles. Te pedimos no incluirlos en tu CV o en la información que nos envíes.</p>
+
+        <h2>3. Finalidades del tratamiento</h2>
+        <p><strong>Finalidades necesarias</strong> (dan origen a la relación contigo):</p>
+        <ul>
+          <li>Candidatos: evaluar tu perfil, contactarte, entrevistarte y presentarte como candidato a vacantes de nuestros clientes.</li>
+          <li>Clientes y prospectos: atender tu solicitud, enviarte propuestas y cotizaciones, y dar seguimiento a los procesos de búsqueda contratados.</li>
+          <li>Integrar y mantener nuestra base de talento para futuras vacantes acordes a tu perfil.</li>
+          <li>Cumplir obligaciones legales y atender requerimientos de autoridades.</li>
+        </ul>
+        <p><strong>Finalidades secundarias</strong> (no son necesarias para la relación):</p>
+        <ul>
+          <li>Enviarte información sobre nuevas vacantes, promociones, servicios y contenido de Moon Thinking.</li>
+          <li>Realizar encuestas de satisfacción y estadísticas internas.</li>
+        </ul>
+        <p>Si no deseas que tus datos se usen para las finalidades secundarias, puedes indicarlo en cualquier momento escribiendo a <a href="mailto:{{ correo_privacidad }}">{{ correo_privacidad }}</a>. Tu negativa no afectará los servicios que solicitas.</p>
+
+        <h2>4. Transferencias de datos</h2>
+        <p>Si eres candidato, compartiremos tu CV y la información de tu perfil con las empresas cliente que tengan una vacante acorde, con la única finalidad de que evalúen tu candidatura. Al enviarnos tu información y participar en un proceso, aceptas esta transferencia. Si no estás de acuerdo, indícanoslo antes de que te presentemos a un cliente.</p>
+        <p>Fuera de este caso, no vendemos ni compartimos tus datos con terceros, salvo cuando lo exija la ley o una autoridad competente. Podemos apoyarnos en proveedores tecnológicos (alojamiento web, correo y herramientas de gestión) que tratan los datos solo por cuenta nuestra.</p>
+
+        <h2>5. Derechos ARCO y revocación del consentimiento</h2>
+        <p>Tienes derecho a <strong>acceder</strong> a tus datos, <strong>rectificarlos</strong> si son inexactos, <strong>cancelarlos</strong> y <strong>oponerte</strong> a su uso (derechos ARCO), así como a revocar tu consentimiento.</p>
+        <p>Para ejercerlos, envía una solicitud a <a href="mailto:{{ correo_privacidad }}">{{ correo_privacidad }}</a> con tu nombre completo, un medio para responderte, una identificación que acredite tu identidad (o la de tu representante), la descripción clara de los datos y del derecho que deseas ejercer, y cualquier documento que facilite localizar tus datos. Te responderemos en los plazos que marca la ley.</p>
+
+        <h2>6. Conservación y seguridad</h2>
+        <p>Conservamos tus datos el tiempo necesario para cumplir las finalidades descritas y nuestras obligaciones legales. Aplicamos medidas administrativas, técnicas y físicas razonables para protegerlos contra daño, pérdida, alteración o acceso no autorizado.</p>
+
+        <h2>7. Cookies y tecnologías similares</h2>
+        <p>Nuestro sitio puede utilizar cookies técnicas necesarias para su funcionamiento. Puedes deshabilitarlas desde la configuración de tu navegador, aunque algunas funciones podrían verse afectadas.</p>
+
+        <h2>8. Cambios a este aviso</h2>
+        <p>Podemos actualizar este aviso por cambios legales o en nuestros servicios. La versión vigente estará siempre publicada en <a href="{{ url_for('aviso_privacidad', _external=True) }}">www.moonthinking.com/aviso-de-privacidad</a>.</p>
+
+      </article>
+    </div>
+  </section>
+
+{% include "partials/footer.html" %}
+{% endblock %}
